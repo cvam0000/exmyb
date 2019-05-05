@@ -1,0 +1,25 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="206689737250-57omnjb7va1fivk9qcg1hbppatvkgh6n.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </head>
+
+<body>
+
+<h3> EXMYB TEST LOGIN </h3>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Login</button>
+</form>
+<a href="{%url 'signup'%}">Signup</a><br>
+<a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a><br>
+<a href="{% url 'social:begin' backend='linkedin-oauth2' %}">Login with Linkedin</a>
+
+
+</body>
+</html>
