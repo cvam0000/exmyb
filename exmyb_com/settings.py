@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'accounts',
     'social_django',
     'bat',
+    'blog',
     
     
     
