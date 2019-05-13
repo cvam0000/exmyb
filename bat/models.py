@@ -5,10 +5,9 @@ from django.utils import timezone
 
 
 class Bat(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    admin = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     question = models.TextField()
-    answer = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     
@@ -20,3 +19,13 @@ class Bat(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Ans(models.Model):
+    admin = models.ForeignKey(Bat, on_delete=models.CASCADE, null=True)
+    answer = models.TextField()
+    user = models.CharField(max_length=300)
+
+
+    def __str__(self):
+        return str(self.admin)
