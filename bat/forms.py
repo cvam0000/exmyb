@@ -1,7 +1,7 @@
 from django.forms import ModelForm
-from .models import Bat
+from .models import Ans
 
 class AnsForm(ModelForm):
     class Meta:
-         model = Bat
+         model = Ans
          fields = ['answer']

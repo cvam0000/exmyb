@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Bat</h2>	
+
+{% for post in ques %}
+    {{ post }}
+{% endfor %}
+
+
+
+
+
+<form  method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="submit" />
+</form>
+{% endblock %}
