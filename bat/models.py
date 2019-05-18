@@ -60,4 +60,3 @@ class Mcq(models.Model):
 
    
 
-    
