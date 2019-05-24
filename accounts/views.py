@@ -13,6 +13,8 @@ from twilio.rest import Client
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
+from .forms import EditProfileForm
+from django.http import HttpResponseRedirect
 
 
 
@@ -88,3 +90,35 @@ def change_password(request):
 def admin_login(request):
     return render(admin.site.urls)
     
+
+
+
+
+
+def profile_view(request):
+    user = request.user
+    form = EditProfileForm(initial={'first_name':user.first_name, 'last_name':user.last_name})
+    context = {
+        "form": form
+    }
+    return render(request, 'profile.html', context)
+
+def edit_profile(request):
+
+    user = request.user
+    form = EditProfileForm(request.POST or None, initial={'first_name':user.first_name, 'last_name':user.last_name})
+    if request.method == 'POST':
+        if form.is_valid():
+
+
+            user.first_name = request.POST['first_name']
+            user.last_name = request.POST['last_name']
+
+            user.save()
+            return HttpResponseRedirect('%s'%('profile'))
+
+    context = {
+        "form": form
+    }
+
+    return render(request, "editprofile.html", context)
