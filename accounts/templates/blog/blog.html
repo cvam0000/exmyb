@@ -1,7 +1,6 @@
-{% for post in posts %}
+{% for blog in blog %}
     <div>
-        <p>published: {{ post.published_date }}</p>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
+        <p>published: {{ blog.published_date }}</p>
+        <h2><a href="">{{ blog.title }}</a></h2>
+        <p>{{ blog.body_text }}</p>
     </div>
-{% endfor %}
