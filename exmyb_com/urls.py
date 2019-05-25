@@ -23,5 +23,6 @@ urlpatterns = [
     path('adminExmyb',include('admin_exmyb.urls')),
     path('bat',include('bat.urls')),
     path('blog',include('blog.urls')),
+    path('about', include('static_pages.urls'))
     
 ]
