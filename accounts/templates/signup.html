@@ -72,6 +72,18 @@
     background: #007bb5;
     color: white;
   }
+
+  small{
+    font-size: 10px;
+  }
+
+  input{
+    margin-left:20px;
+    width:90%;
+  }
+  label{
+    margin-left:20px;
+  }
   </style>      
 </header>
 
@@ -100,6 +112,8 @@
 
 
                           <br>
+
+                          <br><br>
 <br>
                        </center> 
                     </div>
@@ -120,7 +134,7 @@
         {{ field.label_tag }}<br>
         {{ field }}
         {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
+          
         {% endif %}
         {% for error in field.errors %}
           <p style="color: red">{{ error }}</p>
@@ -132,6 +146,7 @@
     border: none;
     text-decoration: none;
     padding: 10px;
+    margin-left: 20px;
     border-radius: 4px;">Sign up</button>
   </form>
 
@@ -171,13 +186,22 @@
                 <center>
                 <p><br/>By signing up you agree to our <a href="tandc.html">Terms of Service</a> 
                     and <a href="pp.html">Privacy Policy</a></p>
-                </center>    
+                </center>  
+                <br><br>  
             </div>    
         </div>    
 
     </div>    
 </body>
+<br>
 
+                          <br><br><br>
+
+                          <br><br><br>
+
+                       
+
+                          
 <footer>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
@@ -241,3 +265,4 @@
 
 </html>
 
+margin-left:20px;

@@ -7,8 +7,8 @@ from . import views
 
 urlpatterns = [
     path('', views.about ,name="about"),
-   # path(  , name=""),
-   # path(  , name=""),
+    path('/policy' , views.policy, name="policy"),
+    path( '/t&c' ,views.tc, name="tc"),
    # path(  , nsme =""),
     
 ]
