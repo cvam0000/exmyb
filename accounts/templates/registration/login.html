@@ -1,4 +1,7 @@
 
+{% include 'nav.html' %}
+{% block content %}
+{% endblock %}
 <!--
 <!DOCTYPE html>
 <html>
@@ -15,7 +18,29 @@
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit">Login</button>
-</form>
+</form>*{
+    font-family: Maven Pro;
+}
+#home_1, #home_2, #home_3, #home_4, #home_5, #home_6, #home_21, #home_22, #home_31, #home_32{
+    color: black;
+    font-size: 14px;
+}
+#home_1:hover,#home_2:hover,#home_3:hover, #home_4:hover, #home_5:hover, #home_6:hover,
+#home_21:hover, #home_22:hover, #home_31:hover, #home_32:hover {
+    color: #8ac832;
+}
+.bo-content, .in-content{
+    height: auto;
+    width: -1px;
+    list-style: none;
+    border-top: 2px solid #8ac832;
+    text-align: left;
+    box-shadow: 1px 1px 2px 2px #cac2c25c;
+    display:none;
+}
+#home_2:hover .bo-content{
+    display:block;
+}
 <a href="{%url 'signup'%}">Signup</a><br>
 <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a><br>
 <a href="{% url 'social:begin' backend='linkedin-oauth2' %}">Login with Linkedin</a>
@@ -25,6 +50,12 @@
 </html>
 
 -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <!DOCTYPE html>
 <html>
@@ -128,6 +159,7 @@
                     <div class="col-md-12">
         
                            <form   method="post" >
+                              <input type="hidden" name="csrfmiddlewaretoken" value="AWTRNaPOW1lPC3FWoBVlGg6MCuJUxWvR9suUYJWY2aACPTbTIBw1pCKJ5x59XGIF">
                               {% csrf_token %}
                             
                               <div class="wrap-input100 validate-input" 
@@ -135,7 +167,7 @@
                                  <a style="font-family: Maven Pro;font-size: 14px;">
                                     <i class="fas fa-envelope">&nbsp;Email</i>
                                  </a><br/>
-                                 <input class="col-sm-12 input100" type="text" name="email">
+                                 <input class="col-sm-12 input100" id="id_username"  autofocus="" required=""type="text" name="username">
                               </div>
                               <br/>
                     </div>
@@ -149,7 +181,7 @@
                                <a style="font-family: Maven Pro;font-size: 14px;">
                                   <i class="fas fa-lock">&nbsp;Password</i>
                                </a><br/>
-                               <input class="col-sm-12 input100" type="password" name="password">
+                               <input class="col-sm-12 input100" id="id_password "  autofocus="" required="" type="password" name="password">
                             </div>
                   </div>
 
@@ -218,8 +250,20 @@
 
     </div>    
 </body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <footer>
+
+
+    
+    <br>
+    <br>
+    <br>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
         <hr>

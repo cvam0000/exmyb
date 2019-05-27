@@ -1,0 +1,115 @@
+<!DOCTYPE Html>
+<html>
+<header>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/head.css">  
+    <link href='https://fonts.googleapis.com/css?family=Maven Pro' rel='stylesheet'>
+    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+    
+    *{
+    font-family: Maven Pro;
+}
+#home_1, #home_2, #home_3, #home_4, #home_5, #home_6, #home_21, #home_22, #home_31, #home_32{
+    color: black;
+    font-size: 14px;
+}
+#home_1:hover,#home_2:hover,#home_3:hover, #home_4:hover, #home_5:hover, #home_6:hover,
+#home_21:hover, #home_22:hover, #home_31:hover, #home_32:hover {
+    color: #8ac832;
+}
+.bo-content, .in-content{
+    height: auto;
+    width: -1px;
+    list-style: none;
+    border-top: 2px solid #8ac832;
+    text-align: left;
+    box-shadow: 1px 1px 2px 2px #cac2c25c;
+    display:none;
+}
+#home_2:hover .bo-content{
+    display:block;
+}
+    
+    </style>
+</header>
+<body>
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg fixed-top" style="margin-top: -21px;background-color: #f4f4f4;">
+        <a class="navbar-brand">
+          <img src="./assets/img/ExMyB_Logo.png" style="margin-top: -10px;width: 96px;height: auto;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html" id="home_1"><b>HOME</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="home_2"><b>BUSINESS OWNER</b></a>
+              <br/>
+              <ul class="bo-content">
+                  <li>
+                      <a class="nav-link" href="incards.html" id="home_21">
+                        <b>Connect with Investor</b>
+                      </a> 
+                  </li>
+                  <li>
+                      <a class="nav-link" href="bocards.html" id="home_22">
+                        <b>Connect with Fellow Business Owner</b>
+                      </a>
+                  </li>
+              </ul>
+            </li>    
+            <li class="nav-item">
+              <a class="nav-link" id="home_3"><b>INVESTOR</b></a>
+                <ul class="in-content">
+                  <li>
+                    <a class="nav-link" href="bocards.html" id="home_31"><b>Connect with Business Owner</b></a> 
+                    
+                  </li>
+                  <li>
+                      <a class="nav-link" href="incards.html" id="home_32"><b>Connect with Fellow Investor</b></a>
+                  </li>
+                </ul>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="about.html" id="home_4"><b>ABOUT</b></a>
+              </li> 
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html" id="home_5"><b>BLOG</b></a>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link" href="faq.html" id="home_6"><b>FAQ</b></a>
+            </li> 
+            </ul> 
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <button style="width: 86px;
+                margin-top: -10px;
+                height: auto;
+                padding: 0px;
+                background-color: #8ac832;
+                color: white;
+                border: transparent;
+                font-size: 14px;">
+                  <a class="nav-link" href="login.html" style="color:white;"><b>Login</b></a>
+                 </button> 
+            </li>
+          </ul>
+        </div>  
+    </nav>
+</div>    
+
+
+</body>
+<footer>
+</footer>  
+</html>
