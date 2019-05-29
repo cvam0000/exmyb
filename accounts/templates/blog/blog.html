@@ -1,6 +1,208 @@
-{% for blog in blog %}
-    <div>
-        <p>published: {{ blog.published_date }}</p>
-        <h2><a href="">{{ blog.title }}</a></h2>
-        <p>{{ blog.body_text }}</p>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="./css/blog.css">  
+        <link rel="stylesheet" type="text/css" href="./css/foot.css">  
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+        <link href='https://fonts.googleapis.com/css?family=Maven Pro' rel='stylesheet'>
+        <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+  
+
+</head>
+
+<body>
+
+  
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Blog Entries Column -->
+      <div class="col-md-8">
+
+                <br/><br/>
+
+        <!-- Blog Post -->
+
+        {% for blog in blog %}
+   
+
+        <div class="card mb-4">
+                
+          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">{{ blog.title }}</h2>
+            <p class="card-text">{{ blog.body_text }}</p>
+            <a href="blogpost.html" class="button" style="background-color: #8ac832; color:white;padding: 10px;">Continue Reading &rarr;</a>
+          </div>
+          <div class="card-footer text-muted">
+            <a><i class="far fa-calendar-alt" style="color:#8ac832;"></i>&nbsp;May 28,2019</a>
+            <br/>
+            <a>Published By:xyz
+                <small>published: {{ blog.published_date }}</small>
+            </a>
+          </div>
+        </div>
+
+
+        {% endfor %}
+
+        <!-- Blog Post -->
+        <div class="card mb-4">
+          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">Post Title</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+            <a href="blogpost.html" class="button" style="background-color: #8ac832; color:white;padding: 10px;">Continue Reading &rarr;</a>
+          </div>
+          <div class="card-footer text-muted">
+                <a><i class="far fa-calendar-alt" style="color:#8ac832;"></i>&nbsp;May 28,2019</a>
+                <br/>
+                <a>Published By:xyz</a>
+          </div>
+        </div>
+
+        <!-- Blog Post -->
+        <div class="card mb-4">
+          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">Post Title</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+            <a href="blogpost.html" class="button" style="background-color: #8ac832; color:white;padding: 10px;">Continue Reading &rarr;</a>
+          </div>
+          <div class="card-footer text-muted">
+                <a><i class="far fa-calendar-alt" style="color:#8ac832;"></i>&nbsp;May 28,2019</a>
+                <br/>
+                <a>Published By:xyz</a>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center mb-4">
+          <li class="page-item">
+            <a class="page-link" href="#">&larr; 1</a>
+          </li>
+          <li class="page-item disabled">
+            <a class="page-link" href="#">2 &rarr;</a>
+          </li>
+        </ul>
+
+      </div>
+
+
+<div class="col-md-4">
+                
+                <!-- Search Widget -->
+                <div class="card my-4">
+                        <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th style="background-color:#8ac832;color:white;"><center>New Posts</center></th>
+                                    
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>John</td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td>Mary</td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td>July</td>
+                                    
+                                  </tr>
+                                </tbody>
+                              </table>
+                </div>
+        
+                
+        
+      </div>
+
     </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+       
+  
+
+</body>
+
+<footer class="fixed-bottom">
+  
+        <div class="container text-center text-md-left"
+             style= "background-color:white; font-size: 15px; height:100px;">
+        
+              <div class="row">
+                    
+                <div class="col-md-2 mx-auto">
+                   <img src="./assets/img/ExMyB_Logo.png" style="width: 115px; height: 130px; margin-top: -42px;">
+                   <br>
+                  <p style="margin-top: -30px; padding-left: 21px;"> <small>© 2018-2019</small></p>
+                </div>
+                
+                <div class="col-md-2 mx-auto">
+                 <h5>About</h5>
+                 <ul class="list-unstyled" >
+                        <li><a href="about.html" style=" color :black;">About us</a></li>
+                        <li><a href="bocards.html" style=" color :black;">For Business Owners</a></li>
+                        <li><a href="incards.html" style=" color :black;">For Investors</a></li>
+                 </ul>
+                </div> 
+               
+                <div class="col-md-2 mx-auto">
+                  <h5>Explore</h5>
+                  <ul class="list-unstyled">
+                    <li><a href="login.html" style=" color :black;">Login</a></li>
+                    <li><a href="faq.html" style=" color :black;">FAQs</a></li>
+                    <li><a href="blog.html" style=" color :black;">Blog</a></li>
+                  </ul>
+                </div>
+                
+                <div class="col-md-2 mx-auto">
+                  <h5>Follow Us</h5>
+                  <ul class="list-unstyled">
+                  <li>
+                    <a class="fab fa-facebook-f" 
+                       href="https://www.facebook.com/ExMyB/" 
+                       id="fb"></a>
+                    <a class="fab fa-instagram" 
+                     href="https://www.instagram.com/ExMyB/" 
+                     id="insta"></a>
+                    <a class="fab fa-linkedin-in" 
+                     href="https://www.linkedin.com/company/expand-my-business/" 
+                     id="lin">
+                    </a>
+                  </li> 
+                  </ul>    
+                </div>
+        
+           <div class="col-md-2 mx-auto">
+                <h5>Contact</h5>
+                <p style="color: #6a6e71">contact@exmyb.com</p>
+           </div>
+        
+              </div>
+    
+        </div>     
+      <!--script type="text/javascript" src="./js/about.js"></script!-->
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</footer>
+
+</html>

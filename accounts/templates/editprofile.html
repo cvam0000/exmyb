@@ -4,12 +4,293 @@
 
 <h1>Edit Profile</h1>
 
-
+<!---
 <form method="POST" action="{% url 'edit_profile' %}" class="" >
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Save</button>
 </form>
+-->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<header>
+        <link rel="stylesheet" type="text/css" href="./css/editprofile.css"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+        <link href='https://fonts.googleapis.com/css?family=Maven Pro' rel='stylesheet'>
+        <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+   <style>
+   
+   *{
+    font-family: Maven Pro;
+}
+
+#dp{
+    width: 200px;
+    height:200px;
+    border: 1px solid #dcd7d7;
+}
+#acc_d{
+    width: 200px;
+    height:auto;
+    border: 1px solid #dcd7d7;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 5px;
+    margin-left: 95px;
+}
+#per_d{
+    width: 200px;
+    height:auto;
+    border: 1px solid #dcd7d7;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 5px;
+    margin-left: 95px;
+}
+#oth_d{
+    width: 200px;
+    height:auto;
+    border: 1px solid #dcd7d7;
+    margin-top: 10px;
+    padding: 5px;
+    margin-left: 95px;
+}
+h5:hover{
+    color:#8ac832;
+}
+option:hover{
+    color: white;
+    background-color: #8ac832;
+}
+#profile_save{
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #8ac832;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    width: 92px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  #profile_save span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  #profile_save span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  #profile_save:hover span {
+    padding-right: 25px;
+  }
+  
+  #profile_save:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+   
+   
+   </style>     
+</header>
+<body style="font-family:Maven Pro;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="row">
+                    <div class="col-md-12" style="box-shadow: 2px 2px 3px 3px #a9a4a46b; height:auto ;"> 
+                <center><h3>Name</h3></center>
+                <br/>
+                <div id="dp">Profile Pic</div> 
+                <br/>
+                <table class="table table-bordered">
+                        <tbody>
+                              <tr>
+                                <td>
+                                    <a>Email Address</a>
+                                </td>
+                                
+                              </tr>
+                              <tr>
+          
+                                <td>
+                                    <a>Profile Type</a>
+                                </td>
+                               
+                              </tr>
+                              <tr>
+                                  <td>
+                                    <a>Comapny Name</a>
+                                  </td>  
+                              </tr>
+                        </tbody>
+                </table>  
+            
+            
+                   </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-xl-8">
+                <div class="row">
+                   <div class="col-md-10" style="box-shadow: 2px 2px 3px 3px #a9a4a46b"> 
+                       <div class="row">  
+                          <div class="col-md-9" id="acc_d">
+                        <div class="row">
+                           <div class="col-sm-9">
+                                <h5>Account Details</h5>
+                            <br/>   
+                               <a>Password</a>
+                               <input type="password" class="form-control">
+                           </div>
+                           
+                        </div>
+                          </div>
+                          <div class="col-md-9" id="per_d">
+                        <div class="row">
+                            <div class="col-sm-9">
+                           
+                                <h5>Personal Details</h5>
+                                <br/>
+                                <a>First Name</a>
+                                <input type="text" class="form-control">
+                                <br/>
+                                <a>Middle Name</a>
+                                <input type="text" class="form-control">
+                                <br/>
+                                <a>Last Name</a>
+                                <input type="text" class="form-control">
+                                <br/>
+                                <a>Phone Number</a>
+                                <input type="number" class="form-control">
+                                <br/>
+                                <a>LinkedIn Profile</a>
+                                <input type="text" class="form-control">
+                            </div>
+                           
+                        </div>    
+                          </div>
+                          <div class="col-md-9" id="oth_d">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <h5>Other Details</h5>
+                                <br/>
+
+Bandariya, [28.05.19 13:19]
+<a>What is the name of your business/brand?</a>
+                                <input type="text" class="form-control">
+                                <br/>
+                                <a>What industry does your business fall under?</a>
+                                <input class="form-control" list="business" type="text" placeholder="Choose Option">   
+                                <datalist id="business">
+                                      <option value="Aeroscope and Defence">
+                                      <option value="Adverstising and Marketing">
+                                      <option value="Agriculture">
+                                      <option value="BPOs">
+                                      <option value="Building, Construction and Maintenance">
+                                      <option value="Business Services">
+                                      <option value="Colleges">
+                                      <option value="Commercial Printing">
+                                      <option value="Computer Hardware">
+                                      <option value="Education">
+                                      <option value="Education Portals">
+                                      <option value="Education Support">
+                                      <option value="Energy and Utilities">
+                                      <option value="Financials">
+                                      <option value="Financial Distributors">
+                                      <option value="Internet Explorer">
+                                      <option value="Food">
+                                      <option value="Healthcare">
+                                      <option value="Hotels and Resorts">
+                                      <option value="Industrial Goods">  
+                                      <option value="Internet">               
+                                      <option value="IT Services">
+                                      <option value="KPOs">
+                                      <option value="Media and Publishing">
+                                      <option value="Playschools">
+                                      <option value="Retails Shops">
+                                      <option value="Restraunt">
+                                      <option value="Stationary">
+                                      <option value="Technology">
+                                      <option value="Textiles and Apparel">   
+                                      <option value="Transportation and Logistics">    
+                                      <option value="Travel and Leisure">    
+                                      <option value="Other">          
+                                    </datalist>
+                                <br/>
+                                <a>When was the business established?</a>
+                                <input type="text" class="form-control">
+                                <br/>
+                                <a>Your head office is located in which city?</a>
+                                <input type="text" class="form-control">
+                                <br/>
+                                <a>Type of financing required?</a>
+                                <input type="text" class="form-control">
+                                <br/>
+                                <a>What is the reason you are seeking funding?</a>
+                                <input class="form-control" list="funding" type="text" placeholder="Choose Option">   
+                                <datalist id="funding">
+                                      <option value="Debt/Loss">
+                                      <option value="Expansion">
+                                      <option value="Want to Sell Business">
+                                </datalist>
+                                <br/>
+
+Bandariya, [28.05.19 13:19]
+<a>What is the current status of the Business?</a>
+                                <input class="form-control" list="funding" type="text" placeholder="Choose Option">   
+                                <datalist id="funding">
+                                      <option value="Pre Revenue">
+                                      <option value="Revenue Generating">
+                                      <option value="Profit Making">
+                                </datalist>
+                                <br/>
+                                <a>Have you been funded once already? If yes, how much?</a>
+                                <input type="text" class="form-control">
+                                <br/>
+                                <a>Give a general overview of your business?</a>
+                                <input type="text" class="form-control">
+                                
+                            </div>
+                                    
+                        </div>
+                          </div> 
+                        </div>  
+                        <center>
+                        <button class="button" id="profile_save" style="vertical-align:middle"><span>Save</span></button>
+                        </center>
+                    </div>  
+                </div>    
+            </div>
+        </div>    
+    </div>    
+</body>
+<footer>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</footer>    
+</html>
+
+
+
 
 
 {% endblock %}
