@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'bat',
     'blog',
     'boi_cards',
+    'bat1',
+    'static_pages',
     
     
     
