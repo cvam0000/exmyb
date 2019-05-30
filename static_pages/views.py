@@ -12,3 +12,8 @@ def policy(request):
 
 def tc(request):
     return render(request, 'static_pages/t&c.html')
+
+
+
+def faq(request):
+    return render(request, 'static_pages/faq.html')

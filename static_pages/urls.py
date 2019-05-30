@@ -6,9 +6,10 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.about ,name="about"),
-    path('/policy' , views.policy, name="policy"),
-    path( '/t&c' ,views.tc, name="tc"),
+    path('exmyb', views.about ,name="about"),
+    path('policy' , views.policy, name="policy"),
+    path( 't&c' ,views.tc, name="tc"),
+    path( 'faq' ,views.faq, name="faq"),
    # path(  , nsme =""),
     
 ]

@@ -24,6 +24,6 @@ urlpatterns = [
     path('bat',include('bat.urls')),
     path('bat1',include('bat1.urls')),
     path('blog',include('blog.urls')),
-    path('about', include('static_pages.urls'))
+    path('about/', include('static_pages.urls'))
     
 ]
