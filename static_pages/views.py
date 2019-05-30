@@ -17,3 +17,12 @@ def tc(request):
 
 def faq(request):
     return render(request, 'static_pages/faq.html')
+
+
+
+def investor(request):
+    return render(request, 'static_pages/investor.html')
+
+
+def startup(request):
+    return render(request, 'static_pages/startup.html')       

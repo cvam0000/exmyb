@@ -10,6 +10,8 @@ urlpatterns = [
     path('policy' , views.policy, name="policy"),
     path( 't&c' ,views.tc, name="tc"),
     path( 'faq' ,views.faq, name="faq"),
+    path( 'investors' ,views.investor, name="investor"),
+    path( 'startups' ,views.startup, name="startup"),
    # path(  , nsme =""),
     
 ]

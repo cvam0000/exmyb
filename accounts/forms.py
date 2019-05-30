@@ -27,8 +27,11 @@ class OtpForm(forms.Form):
 class EditProfileForm(forms.ModelForm):
 
     first_name = forms.CharField(label='First Name')
-    last_name = forms.CharField(label='Last Name') 
+    last_name = forms.CharField(label='Last Name')
+    email=forms.CharField(label='email')
+    phone= forms.CharField(label='phone')   
+    
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name']
+        fields = ['first_name', 'last_name' , 'email', 'phone']

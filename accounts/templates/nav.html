@@ -56,11 +56,11 @@
                   border-top: 5px solid #8ac832;
                   border-radius: 0px;">
                     <li>
-                      <a class="nav-link dropdown-item" href="incards.html" id="home_31"><b>Connect with Investor</b></a> 
+                      <a class="nav-link dropdown-item" href="{% url 'investor' %}" id="home_31"><b>Connect with Investor</b></a> 
                       
                     </li>
                     <li>
-                        <a class="nav-link dropdown-item" href="bocards.html" id="home_32"><b>Connect with Fellow Business Owner</b></a>
+                        <a class="nav-link dropdown-item" href="{%url 'startup'%}" id="home_32"><b>Connect with Fellow Business Owner</b></a>
                     </li>
                   </ul>
               </li>    
@@ -71,11 +71,11 @@
                 border-top: 5px solid #8ac832;
                 border-radius:0px;">
                   <li>
-                    <a class="nav-link dropdown-item" href="bocards.html" id="home_31"><b>Connect with Business Owner</b></a> 
+                    <a class="nav-link dropdown-item" href="{% url 'investor' %}" id="home_31"><b>Connect with Business Owner</b></a> 
                     
                   </li>
                   <li>
-                      <a class="nav-link dropdown-item" href="incards.html" id="home_32"><b>Connect with Fellow Investor</b></a>
+                      <a class="nav-link dropdown-item" href="{%url 'startup'%}" id="home_32"><b>Connect with Fellow Investor</b></a>
                   </li>
                 </ul>
             </li> 

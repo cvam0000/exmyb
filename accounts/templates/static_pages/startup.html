@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="stylesheet" type="text/css" href="./css/bocards.css"> 
+        <link rel="stylesheet" type="text/css" href="./css/foot.css"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+        <link href='https://fonts.googleapis.com/css?family=Maven Pro' rel='stylesheet'>
+        <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+       <style>
+       
+       #card{
+  background-color:  #f4f4f4;
+  box-shadow: 1px 1px 2px 2px #d0c9c982;
+  margin-top:20px; 
+  height: auto;
+}
+
+#card:hover{
+    cursor: pointer;
+    animation-name: bounce;
+    -moz-animation-name: bounce;
+    -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 2s; 
+
+}
+
+#card button{
+    border: 1px solid black;
+    background: transparent;
+    background-color: #dbf2bb;
+    margin-left: 113px;
+    display: none;
+    box-shadow: 1px 1px 2px 2px black;
+}
+
+#card:hover button{
+    display: block;
+}
+
+#data{
+  height: auto; 
+  background-color: #f4f4f4;
+  font-size: 12px;
+  position: relative;
+  padding: 10px;
+}
+
+#avtr{
+    background-color: #dbf2bb;
+    position: absolute;
+    width: 150px;
+    height: auto;
+    margin-left: -53px;
+    margin-top: 34px;
+    border: 2px solid black;
+}
+       
+       
+       </style> 
+    </head>
+    <body style="font-family:Maven Pro;">
+            
+            {% include 'nav.html' %}
+            <br>
+            <br>
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class="col-md-12">
+                    <h3 style="text-shadow:1px 1px green;"><center><b>List of Business Owners</b></center></h3>
+                </div>
+                <div class="col-md-4" id="card">
+                    <div class="row">
+                        <div class="col-sm-12" id="data">
+                            <div class="col-sm-3" id="avtr">
+                                <img src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/website-15.png" style="width: 80px;
+                                height: auto;
+                                margin-left: -9px;">
+                            </div>
+                            <a style="margin-left: 57px;color:black;font-size: 16px;">
+                               <b>5 lakh - 5 crore</b>
+                            </a>
+                            <p style="margin-left:57px;">
+                                <a><i class="fas fa-briefcase"></i>&nbsp;Consultant at PWC</a>
+                                <br>
+                                <a><i class="fas fa-info-circle"></i>
+                                    &nbsp;Director, Online Services, Individual Buyer, Gurgaon, India
+                                </a>
+                                    <br>
+                                <a>
+                                    <i class="fas fa-map-marker-alt"></i>&nbsp;Delhi, Gurgaon, Navi Mumbai
+                                </a>
+                                    <br>
+                                <a>
+                                    <i class="fas fa-industry"></i>&nbsp;Job Portals, Employment Services, 
+                                    Education Portals, FinTech, Ecommerce Websites,
+                                    Gaming Websites, Financial Websites, 
+                                    Search Engine Websites, Social Network Websites
+                                </a>
+                            </p>
+                            <button href="#" type="button">Explore & Epand</button>
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-4" id="card">
+                        <div class="row">
+                            <div class="col-sm-12" id="data">
+                                <div class="col-sm-3" id="avtr">
+                                    <img src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/website-16.png" style="width: 80px;
+                                    height: auto;
+                                    margin-left: -9px;">
+                                </div>
+                                <a style="margin-left: 57px;color:black;font-size: 16px;">
+                                   <b>5 lakh - 5 crore</b>
+                                </a>
+                                <p style="margin-left:57px;">
+                                    <a><i class="fas fa-briefcase"></i>&nbsp;Consultant at PWC</a>
+                                    <br>
+                                    <a><i class="fas fa-info-circle"></i>
+                                        &nbsp;Director, Online Services, Individual Buyer, Gurgaon, India
+                                    </a>
+                                        <br>
+                                    <a>
+                                        <i class="fas fa-map-marker-alt"></i>&nbsp;Delhi, Gurgaon, Navi Mumbai
+                                    </a>
+                                        <br>
+                                    <a>
+                                        <i class="fas fa-industry"></i>&nbsp;Job Portals, Employment Services, 
+                                        Education Portals, FinTech, Ecommerce Websites,
+                                        Gaming Websites, Financial Websites, 
+                                        Search Engine Websites, Social Network Websites
+                                    </a>
+                                </p>
+                                <button href="#" type="button">Explore & Epand</button>
+        
+                            </div>
+                        </div>
+                </div>
+    
+                <div class="w-100"></div>
+    
+                <div class="col-md-4" id="card">
+                        <div class="row">
+                            <div class="col-sm-12" id="data">
+                                <div class="col-sm-3" id="avtr">
+                                    <img src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/website-18.png" style="width: 80px;
+                                    height: auto;
+                                    margin-left: -9px;">
+                                </div>
+                                <a style="margin-left: 57px;color:black;font-size: 16px;">
+                                   <b>5 lakh - 5 crore</b>
+                                </a>
+                                <p style="margin-left:57px;">
+                                    <a><i class="fas fa-briefcase"></i>&nbsp;Consultant at PWC</a>
+                                    <br>
+                                    <a><i class="fas fa-info-circle"></i>
+                                        &nbsp;Director, Online Services, Individual Buyer, Gurgaon, India
+                                    </a>
+                                        <br>
+                                    <a>
+                                        <i class="fas fa-map-marker-alt"></i>&nbsp;Delhi, Gurgaon, Navi Mumbai
+                                    </a>
+                                        <br>
+                                    <a>
+                                        <i class="fas fa-industry"></i>&nbsp;Job Portals, Employment Services, 
+                                        Education Portals, FinTech, Ecommerce Websites,
+                                        Gaming Websites, Financial Websites, 
+                                        Search Engine Websites, Social Network Websites
+                                    </a>
+                                </p>
+                                <button href="#" type="button">Explore & Epand</button>
+        
+                            </div>
+                        </div>
+                </div>
+        
+                    <div class="col-md-4" id="card">
+                            <div class="row">
+                                <div class="col-sm-12" id="data">
+                                    <div class="col-sm-3" id="avtr">
+                                        <img src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/website-17.png" style="width: 80px;
+                                        height: auto;
+                                        margin-left: -9px;">
+                                    </div>
+                                    <a style="margin-left: 57px;color:black;font-size: 16px;">
+                                       <b>5 lakh - 5 crore</b>
+                                    </a>
+                                    <p style="margin-left:57px;">
+                                        <a><i class="fas fa-briefcase"></i>&nbsp;Consultant at PWC</a>
+                                        <br>
+                                        <a><i class="fas fa-info-circle"></i>
+                                            &nbsp;Director, Online Services, Individual Buyer, Gurgaon, India
+                                        </a>
+                                            <br>
+                                        <a>
+                                            <i class="fas fa-map-marker-alt"></i>&nbsp;Delhi, Gurgaon, Navi Mumbai
+                                        </a>
+                                            <br>
+                                        <a>
+                                            <i class="fas fa-industry"></i>&nbsp;Job Portals, Employment Services, 
+                                            Education Portals, FinTech, Ecommerce Websites,
+                                            Gaming Websites, Financial Websites, 
+                                            Search Engine Websites, Social Network Websites
+                                        </a>
+                                    </p>
+                                    <button href="#" type="button">Explore & Epand</button>
+            
+                                </div>
+                            </div>
+                    </div>
+        
+    
+            </div>
+        </div>    
+
+
+
+<br>
+<br>
+
+        {%include 'foot.html' %}
+</body>
+

@@ -100,7 +100,7 @@ def profile_view(request):
     context = {
         "form": form
     }
-    return render(request, 'profile.html', context)
+    return render(request, 'home.html', context)
 
 def edit_profile(request):
 
@@ -112,6 +112,8 @@ def edit_profile(request):
 
             user.first_name = request.POST['first_name']
             user.last_name = request.POST['last_name']
+            user.email=request.POST['email']
+            user.phone=request.POST['phone']
 
             user.save()
             return HttpResponseRedirect('%s'%('profile'))

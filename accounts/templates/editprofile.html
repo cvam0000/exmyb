@@ -1,20 +1,10 @@
-{% include 'nav.html' %}
-{% block content %}
-{% endblock %}
 
 
-{% extends "base.html" %}
 
-{% block content %}
 
-<h1>Edit Profile</h1>
 
 <!---
-<form method="POST" action="{% url 'edit_profile' %}" class="" >
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
-</form>
+
 -->
 
 
@@ -24,7 +14,7 @@
 
 <!DOCTYPE html>
 <html>
-<header>
+<head>
         <link rel="stylesheet" type="text/css" href="./css/editprofile.css"> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
         <link href='https://fonts.googleapis.com/css?family=Maven Pro' rel='stylesheet'>
@@ -116,8 +106,15 @@ option:hover{
    
    
    </style>     
-</header>
+</head>
 <body style="font-family:Maven Pro;">
+
+
+        {% include 'nav.html' %}
+
+    <br>
+    <br>
+    <br>
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
@@ -162,19 +159,28 @@ option:hover{
                           <div class="col-md-9" id="acc_d">
                         <div class="row">
                            <div class="col-sm-9">
-                                <h5>Account Details</h5>
-                            <br/>   
-                               <a>Password</a>
-                               <input type="password" class="form-control">
-                           </div>
+                                <h5></h5>
+                               <a href="change_password"> <button width="auto" class="button" id="profile_save" style="vertical-align:middle"><span>Change password</span></button></a>
+                                
                            
                         </div>
                           </div>
-                          <div class="col-md-9" id="per_d">
+                          <div class="col-md-9" >
                         <div class="row">
                             <div class="col-sm-9">
                            
-                                <h5>Personal Details</h5>
+
+
+                                    <form method="POST" action="{% url 'edit_profile' %}" class="" >
+                                            {% csrf_token %}
+                                            {{ form.as_p }}
+                                            
+                                            <button type="submit" class="button" id="profile_save" style="vertical-align:middle"><span>Save</span></button>
+                                        </form>
+
+
+
+                   <!--            <h5>Personal Details</h5>
                                 <br/>
                                 <a>First Name</a>
                                 <input type="text" class="form-control">
@@ -200,7 +206,6 @@ option:hover{
                                 <h5>Other Details</h5>
                                 <br/>
 
-Bandariya, [28.05.19 13:19]
 <a>What is the name of your business/brand?</a>
                                 <input type="text" class="form-control">
                                 <br/>
@@ -273,7 +278,7 @@ Bandariya, [28.05.19 13:19]
                                 <input type="text" class="form-control">
                                 <br/>
                                 <a>Give a general overview of your business?</a>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control">-->
                                 
                             </div>
                                     
@@ -281,7 +286,7 @@ Bandariya, [28.05.19 13:19]
                           </div> 
                         </div>  
                         <center>
-                        <button class="button" id="profile_save" style="vertical-align:middle"><span>Save</span></button>
+                        
                         </center>
                     </div>  
                 </div>    
@@ -289,13 +294,10 @@ Bandariya, [28.05.19 13:19]
         </div>    
     </div>    
 </body>
-<footer>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-</footer>    
+{% include 'foot.html'%}   
 </html>
 
 
 
 
 
-{% endblock %}

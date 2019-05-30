@@ -1,4 +1,4 @@
-{% include 'nav.html' %}
+
 {% block content %}
 {% endblock %}
 
@@ -28,7 +28,7 @@
       
       <!-- Navbar -->
       
-      
+      {% include 'nav.html' %}
       <!-- Navbar on small screens -->
       <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
         <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
@@ -49,6 +49,7 @@
                
                <p class="w3-center"><img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fpre00.deviantart.net%2F2c6b%2Fth%2Fpre%2Fi%2F2016%2F364%2Fb%2Fb%2Fshinchan_by_the_driz-datfm3d.png&f=1" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
                <hr>
+               <br><br>
                <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> {{ user.username }}</p>
                <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> {{user.email}}</p>
                <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
@@ -122,7 +123,7 @@
                 <i class="fa fa-remove"></i>
               </span>
               <p><strong>Hey!</strong></p>
-              <p>People are looking at your profile. Find out who.</p>
+              <p>Give bat for get funded.</p>
             </div>
           
           <!-- End Left Column -->
@@ -133,13 +134,10 @@
           
             <div class="w3-row-padding">
               <div class="w3-col m12">
-                <div class="w3-card w3-round w3-white">
-                  <div class="w3-container w3-padding">
-                    <h6 class="w3-opacity">Social Media template by w3.css</h6>
-                    <p contenteditable="true" class="w3-border w3-padding">Status: Feeling Blue</p>
-                    <button type="button" class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button> 
-                  </div>
-                </div>
+                
+                    
+                    <button type="button" class="w3-button w3-theme"></i> Give BAT</button> 
+                 
               </div>
             </div>
             
@@ -189,27 +187,25 @@
           <!-- Right Column -->
           <div class="w3-col m2">
             <div class="w3-card w3-round w3-white w3-center">
-              <div class="w3-container">
-                <p>Upcoming Events:</p>
-                <img src="/w3images/forest.jpg" alt="Forest" style="width:100%;">
-                <p><strong>Holiday</strong></p>
-                <p>Friday 15:00</p>
-                <p><button class="w3-button w3-block w3-theme-l4">Info</button></p>
+              <div class="w3-container"><br>
+                    <b>Give BAT  and get Funded </b><br><br>
+                <button type="button" class="w3-button w3-theme"></i> Give BAT</button> <br><br>
+                
+               
               </div>
             </div>
             <br>
             
             <div class="w3-card w3-round w3-white w3-center">
-              <div class="w3-container">
-                <p>Friend Request</p>
-                <img src="/w3images/avatar6.png" alt="Avatar" style="width:50%"><br>
-                <span>Jane Doe</span>
+              <div class="w3-container"><br>
+               <br>
+               <a href="{% url 'edit_profile' %}"> <button type="button" class="w3-button w3-theme"></i> EDIT PROFILE </button> <br><br></a>
                 <div class="w3-row w3-opacity">
                   <div class="w3-half">
-                    <button class="w3-button w3-block w3-green w3-section" title="Accept"><i class="fa fa-check"></i></button>
+                    
                   </div>
                   <div class="w3-half">
-                    <button class="w3-button w3-block w3-red w3-section" title="Decline"><i class="fa fa-remove"></i></button>
+                   
                   </div>
                 </div>
               </div>
@@ -261,6 +257,7 @@
         }
       }
       </script>
+      {% include 'foot.html' %}
       
       </body>
       </html> 
@@ -270,9 +267,981 @@
 
 
 {% else %}
-  <p>bhai login karle</p>
- <a href="{% url 'login' %}">login</a>
- <a href="{%url 'signup'%}">Signup</a>
+
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/head.css"> 
+    <link rel="stylesheet" type="text/css" href="./css/foot.css">  
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+    <link href='https://fonts.googleapis.com/css?family=Maven Pro' rel='stylesheet'>
+    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+    <style>
+                        .navbar-nav {min-height:100px !important
+                       
+                        }
+                        .navbar-nav > li > a  {margin-top:40px;}
+                        
+                        .img-img{
+                            margin-top:-30px;
+                        }
+                        
+.button {
+                            
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #8ac832;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: auto;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-top:40px;
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button:hover span {
+  padding-right: 25px;
+}
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.header {
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    height: 90vh;
+}
+.header-wrapper {
+    height: 100.2%;
+    width: 30vw;
+    min-width: 430px;
+    background-color: #000;
+    position: absolute;
+    top: -10;
+    left: 0;
+    z-index: 10001;
+    transform: translateX(-100%);
+}
+    .header-wrapper.expanded.has-notif .nav-sub-holder {
+        padding-top: 80px;
+    }
+.header-page-title, .header-search-input {
+    font-weight: 400;
+    padding: 0 24px;
+    line-height: 64px;
+}
+.header-wrapper:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #222629;
+}
+.header-wrapper.expanded {
+    transform: skew(-20deg);
+    top: 0px;
+    direction: rtl;
+    pointer-events: none;
+}
+.nav-sub-holder {
+    z-index: 10005;
+    position: relative;
+    padding: 55px 10px;
+    direction: ltr;
+    transform: skew(20deg);
+}
+    .nav-sub-holder .inner-skew {
+        transform: skew(-20deg) translateX(-110px);
+        pointer-events: all;
+    }
+        .nav-sub-holder .inner-skew .inner-skew-back {
+            transform: skew(20deg) translateX(110px);
+            display: inline-block;
+            width: 100%;
+        }
+        .nav-sub-holder .inner-skew h1 {
+            color: #fff;
+            font-size: 2.7rem;
+        }
+.home-slider-wrapper {
+    height: 90vh;
+    overflow: hidden;
+    background-color: #222629;
+}
+.homepage-slider {
+    width: 200vw;
+    padding-left: 36vw;
+    font-family: 'Maven Pro', sans-serif;
+    background-color: #202020;
+}
+    .homepage-slider .home-slide {
+        width: 40vw;
+        height: 100vh;
+        float: left;
+        transform: skew(-20deg) translate3d(0, 0, 0);
+        margin-left: -50px;
+        transition: all .5s ease;
+        position: relative;
+        overflow: hidden;
+        perspective: 1px;
+    }
+.home-slide-inner, .home-slide-inner h1 {
+    position: absolute;
+    transition: all .5s ease;
+}
+.home-slide#slide1 {
+    margin-left: -6vw;
+    background-color: #4caf50;
+}
+.home-slide#slide3 {
+    background-color: #03a9f4;
+}
+.home-slide#slide2 {
+    width: 30vw;
+    margin-left: -90px;
+}
+#slide1.over, .home-slide#slide1:hover {
+    width: 56vw;
+}
+.home-slide#slide2:hover {
+
+Bandariya, [30.05.19 16:44]
+width: 40vw;
+    margin-right: -5vw;
+    margin-left: -8vw;
+}
+.home-slide#slide3:hover {
+    width: 70vw;
+    margin-left: -22vw;
+}
+.home-slide .para {
+    display: none;
+}
+.home-slide .fa-ul{
+    display:none;
+    color: black;
+}
+.home-slide .fa-ul:hover{
+   
+    color:#8ac832;
+}
+.homepage-slider .home-slide:hover .home-slide-inner p.para {
+    display: block;
+    position: absolute;
+    font-size: 30px;
+    color: #000;
+    font-weight: 500;
+    margin-top: 46px;
+    width: 53%;
+    left: 30%;
+    margin: 35px 0 0px;
+    line-height: 3vw;
+}
+.homepage-slider .home-slide:hover .home-slide-inner .fa-ul{
+    display: block;
+}
+.home-slide-inner {
+    height: 100%;
+    width: 70vw;
+    background-color: #4CAF50;
+    background-image: url("./assets/img/bo.png");
+    background-size: cover;
+    transform: skew(20deg) translateX(-20%) translate3d(0, 0, 0);
+    cursor: context-menu;
+}
+#slide1 .home-slide-inner {
+    background-color: #4CAF50;
+    background-image: url("./assets/img/bo.png");
+}
+#slide1 .home-slide-inner::before {
+    background-color: #4CAF50;
+   
+}
+
+#slide3 .home-slide-inner {
+    background-color: #03a9f4;
+    background-image: url("./assets/img/Investor.png");
+}
+#slide1.over, .home-slide#slide1:hover .home-slide-inner {
+    background-image: none;
+    background-color: #ffffff;
+}
+#slide3.over, .home-slide#slide3:hover .home-slide-inner {
+    background-image: none;
+    background-color: #ffffff;
+}
+    #slide1.over .home-slide-inner, .home-slide#slide1:hover .home-slide-inner,
+    #slide3.over .home-slide-inner, .home-slide#slide3:hover .home-slide-inner {
+        transform: skew(20deg) translateX(-12%) translate3d(0, 0, 0);
+    }
+.home-slide:hover .home-slide-inner:before {
+    content: '';
+    z-index: 0;
+    transition: .2s ease-out;
+    background: -webkit-linear-gradient(-90deg,#fff 0,#f2f2f2 85%);
+    background: -moz-linear-gradient(-90deg,#fff 0,#f2f2f2 85%);
+    background: linear-gradient(-90deg,#fff 0,#f2f2f2 85%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.home-slide.greyed-out {
+    filter: grayscale(100%);
+}
+.home-slide-inner h1 {
+    bottom: 30%;
+    width: 53%;
+    left: 20%;
+    color: #FFF;
+    margin: 35px 0 0px;
+    font-size: 4vw;
+    font-weight: 600;
+    line-height: 3vw;
+    cursor: context-menu;
+    text-shadow: 2px 2px #0000007d;
+}
+.homepage-slider .home-slide:hover .home-slide-inner h1 {
+    color: #000000;
+    text-shadow: none;
+    display: none;
+}
+.home-slide-inner .filledbutton {
+    border: none;
+    border-radius: 50px;
+    display: inline-block;
+    opacity: 0;
+    font-weight: 700;
+    text-transform: none;
+    transition: all .5s ease;
+    font-size: 18px;
+    width: 200px;
+    color: #ffffff;
+    line-height: 40px;
+    text-align: center;
+}
+.home-slide-inner h1 .filledbutton {
+    display: none;
+}
+@media only screen and (max-width:1200px) {
+    .home-slide-inner h1 .filledbutton {
+        display: inline-block;
+    }
+    .homepage-slider .home-slide:hover .home-slide-inner h1 {
+        color: #000000;
+        text-shadow: none;
+        display: block;
+    }
+    .homepage-slider .home-slide:hover .home-slide-inner p.para {
+        display: none;
+    }
+}
+#slide1 .filledbutton {
+    background: transparent;
+    border: 2px solid #449b48;
+    color: #449b48;
+}
+#slide3 .filledbutton {
+    background: transparent;
+    border: 2px solid #03a9f4;
+    color: #03a9f4;
+}
+@media only screen and (max-width:1200px) {
+    .header {
+        position: relative;
+        left: 0;
+        z-index: 10;
+        height: auto;
+    }
+    .header-wrapper {
+        position: relative;
+        width: 100vw;
+        min-width: 1px;
+        background-color: #202020;
+        top: 0;
+    }
+        .header-wrapper.expanded {
+            transform: none;
+            width: auto;
+        }
+    .nav-sub-holder {
+        padding: 0;
+        transform: none;
+    }
+        .nav-sub-holder .inner-skew {
+            overflow: visible;
+            transform: none;
+        }
+            .nav-sub-holder .inner-skew .inner-skew-back {
+                transform: none;
+
+Bandariya, [30.05.19 16:44]
+max-height: 100vh;
+                overflow: auto;
+                padding: 64px 16px;
+            }
+            .nav-sub-holder .inner-skew h1 {
+                color: #fff;
+                font-size: 1.5rem;
+                text-align: center;
+            }
+    .home-slider-wrapper {
+        height: auto;
+        margin-top: 0px;
+    }
+    .homepage-slider {
+        width: 100vw;
+        padding-left: 0;
+    }
+    .home-slide #slide1 {
+        margin-left: 0vw;
+        background-color: #4caf50;
+    }
+    .homepage-slider .home-slide {
+        width: 50vw;
+        height: auto;
+        float: left;
+        transform: none;
+        margin-left: 0;
+        transition: all .5s ease;
+        position: relative;
+        overflow: hidden;
+        perspective: 1px;
+    }
+    .home-slide-inner, .home-slide-inner h1 {
+        position: absolute;
+        transition: all .5s ease;
+    }
+        .home-slide-inner .filledbutton {
+            display: inline-block;
+            opacity: 1;
+            margin-top: 15px;
+        }
+        .home-slide-inner h1 {
+            left: 0;
+            right: 0;
+            margin: 20px auto;
+        }
+        .home-slide-inner h1 {
+            left: auto;
+            font-size: 25px;
+            text-align: center;
+            line-height: 24px;
+            width: 100%;
+            top: 0;
+            margin: 0;
+            bottom: auto;
+            position: relative;
+        }
+    .homepage-slider .home-slide:hover .home-slide-inner h1 {
+        color: #ffffff;
+    }
+    #slide1.over .home-slide-inner, .home-slide#slide1:hover .home-slide-inner {
+        transform: none;
+        background-image: url(../../assest/img/bo.png);
+    }
+    #slide3.over, .home-slide#slide3:hover .home-slide-inner {
+        background-image: url(../../assest/img/Investor.png);
+        background-color: #ffffff;
+    }
+#slide1.over .home-slide-inner, .home-slide#slide1:hover .home-slide-inner,
+        #slide3.over .home-slide-inner, .home-slide#slide3:hover .home-slide-inner {
+            transform: none;
+        }
+    .home-slide:hover .home-slide-inner:before {
+        background-image: none;
+        transition: none;
+    }
+    #slide1.over, .home-slide#slide1:hover {
+        width: 50vw;
+    }
+    .home-slide#slide3:hover {
+        width: 50vw;
+        margin-left: 0vw;
+    }
+    .home-slide-inner {
+        height: 100%;
+        width: 50vw;
+        padding: 100px;
+        background-size: cover;
+        transform: none;
+        position: relative;
+    }
+}
+@media only screen and (max-width:768px) {
+    .homepage-slider .home-slide {
+        width: 100%;
+        margin-left: 0;
+        transform: none;
+        height: auto;
+        border-radius: 0;
+    }
+    .home-slide#slide1 {
+        margin-left: 0vw;
+        background-color: #4caf50;
+    }
+    .home-slide#slide2 {
+        width: 100%;
+        margin: 0;
+    }
+        .home-slide#slide2:hover {
+            width: 100%;
+            margin: 0;
+        }
+    .home-slide-inner {
+        width: 100%;
+        transform: none;
+        background-color: #60bc57;
+        background-image: none;
+        position: relative;
+        padding: 20px;
+    }
+    #slide1.over, .home-slide#slide1:hover {
+        width: 100%;
+        margin: 0;
+    }
+    #slide1 .home-slide-inner {
+        background-image: none;
+        background-color: #4CAF50;
+    }
+    #slide3 .home-slide-inner {
+        background-image: none;
+        background-color: #58c7f2;
+    }
+    #slide1.over .home-slide-inner, .home-slide#slide1:hover .home-slide-inner {
+        transform: none;
+    }
+    .home-slide#slide3:hover {
+        width: 100%;
+        margin: 0;
+    }
+    .home-slide-inner h1 {
+        left: auto;
+        font-size: 20px;
+        line-height: 24px;
+        width: 100%;
+        top: 0;
+        margin: 0;
+        bottom: auto;
+        position: relative;
+    }
+    
+}
+
+.home-slide-holder{
+    display:none;
+}
+.home-slide#slide1:hover .home-slide-holder{
+    display:block;
+}
+
+Bandariya, [30.05.19 16:44]
+.home-slide .revealtext {
+    opacity: 0;
+    display: none;
+}
+.home-slide:hover .revealtext {
+    opacity: 1;
+    display: block;
+}  
+
+#home-three{
+    background-color: #f4f4f4;
+    width:100% ;
+} 
+#card{
+    background-color:  #f4f4f4;
+    box-shadow: 1px 1px 2px 2px #d0c9c982;
+    margin-top:20px; 
+    height: auto;
+  }
+  
+  #card:hover{
+      cursor: pointer;
+      animation-name: bounce;
+      -moz-animation-name: bounce;
+      -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 2s; 
+  
+  }
+  
+  #card button{
+      border: 1px solid black;
+      background: transparent;
+      background-color: #dbf2bb;
+      margin-left: 113px;
+      display: none;
+      box-shadow: 1px 1px 2px 2px black;
+  }
+  
+  #card:hover button{
+      display: block;
+  }
+  
+  #data{
+    height: auto; 
+    background-color: #f4f4f4;
+    font-size: 12px;
+    position: relative;
+    padding: 10px;
+  }
+  
+  #avtr{
+      background-color: #dbf2bb;
+      position: absolute;
+      width: 150px;
+      height: auto;
+      margin-left: -53px;
+      margin-top: 34px;
+      border: 2px solid black;
+  }
+.fas{
+    font-size: 19px;
+}
+</style>
+</head>
+
+<body>
+    {% include 'nav.html' %} 
+
+
+           <section class="header">
+            <div class="header-wrapper  expanded">    
+                          
+                      <div class="nav-sub-holder">
+                          <div class="inner-skew">
+                              <div class="inner-skew-back">
+                                  <h1 class="wow fadeInLeft">Build a landing page for your business or project and generate more leads!</h1>
+                              </div>
+                          </div>
+                      </div>
+              
+              </div>
+           </section>
+          
+          <div class="home-slider-wrapper">
+                <div class="homepage-slider">
+                    <div class="home-slide" id="slide1">
+        
+                        <div class="home-slide-inner">
+        
+                            <h1><small>I am a</small><br>
+                                Business Owner<br>
+                            </h1>
+                            <p class="para">
+                                Here is your chance to get connected with experts 
+                                and experienced investors in your industry and 
+                                help pave the way forward for your business expansion.
+                            </p>
+                            <div class="home-slider-holder">
+                                    <div class="slider-inner-skew">
+                                        <div class="slider-inner-skew-back">
+                                            <ul class="fa-ul" style="
+                                                padding-left: 0;
+                                                margin-left: 293px;
+                                                margin-top: 300px;
+                                                color:black;">
+                                                <li>
+                                                    <h4>Connect with:</h4>
+                                                </li>
+                                                <br/>
+                                                <li>
+                                                    <a href="incards.html" style="color:#8ac832;text-decoration: none;" id="conn_in">
+                                                        <i class="fas fa-user" style="border-radius: 50%;
+                                                        border: 4px solid #8ac832;font-size: 30px;"></i>&nbsp;<b>Investors</b>
+                                                    </a>
+                                                </li>
+                                                <br/>
+                                                <li>
+                                                    <a href="bocards.html" style="color:#8ac832;text-decoration: none;" id="con_bo">
+                                                        <i class="fas fa-briefcase" style="border-radius: 50%;
+                                                        border: 4px solid #8ac832;font-size: 30px;"></i>&nbsp;<b>Fellow Business Owners</b>
+
+</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                            
+        
+                        </div>
+                    </div>
+                    <div class="home-slide" id="slide3" style="background-color:#03a9f4;">
+                        <div class="home-slide-inner">
+        
+                            <h1><small>I am an</small><br>
+                                Investor<br>
+                               
+                            </h1>
+                            <p class="para">
+                                All deals are not made in heaven! Let ExMyB 
+                                help find a tailor-made deal just for you and
+                                 put an end to irrelevant deals crowding your inbox!
+                            </p>
+                            <div class="home-slider-holder">
+                                    <div class="slider-inner-skew">
+                                        <div class="slider-inner-skew-back">
+                                            <hr>
+                                            <ul class="fa-ul" style="
+                                                padding-left: 0;
+                                                margin-left: 293px;
+                                                margin-top: 300px;
+                                                color:black;">
+                                                <li>
+                                                    <h4>Connect with:</h4>
+                                                </li>
+                                                <br/>
+                                                <li>
+                                                    <a href="bocards.html" style="color:#8ac832;text-decoration: none;" id="conn_in">
+                                                        <i class="fas fa-user" style="border-radius: 50%;
+                                                        border: 4px solid #8ac832;font-size: 30px;"></i>&nbsp;<b>Business Owners</b>
+                                                    </a>
+                                                </li>
+                                                <br/>
+                                                <li>
+                                                    <a href="incards.html" style="color:#8ac832;text-decoration: none;" id="con_bo">
+                                                        <i class="fas fa-briefcase" style="border-radius: 50%;
+                                                        border: 4px solid #8ac832;font-size: 30px;"></i>&nbsp;<b>Fellow Investors</b>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+          </div>
+
+            <br><br>
+
+<section class="col-lg-12" style="height:auto;padding:30px;">
+                    <div class="row">
+                      <div class="col-sm-12"></div>  
+                      <div class="col-sm-2"></div>
+                      <div class="col-xl-4">
+                        <img src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/website1.png"
+                        style="width:124%;height:auto;">
+                     </div>
+                     <div class="col-xl-4" align="center" 
+                     style="margin-top: 62px;
+                     padding: 43px;
+                     margin-left: 78px;">
+                        <center>
+                        <p>Give the BAT and find out where you
+                            <br><b>really stand in the eyes of a
+                            <br> distinguished investor!</b>
+                        </p>
+                        <p>To know more about the BAT, 
+                            <a href="services.html">click here!!!</a>
+                        </p> 
+                        </center>
+                     </div>
+                     <div class="col-sm-2"></div>
+                   </div> 
+                    
+            </section>
+                
+            <section class="col-lg-12" id="home-three">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <center>
+                                <img src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/Artboard-6.png"
+                                style="width:37%; height:auto;">
+                                <h5><b>Startups</b></h5>
+                                <p>
+                                    We help Startups / SMEs / Business owners get connected with 
+                                    the investors for the funds you want to raise to expand your business.
+                                </p>
+                            </center>
+                        </div>
+                        <div class="col-lg-4">
+                            <center>
+                               <img src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/Artboard-7.png"
+                                style="width:37%; height:auto;">
+                                <h5><b>Our Platform</b></h5>
+                                <p>
+                                    We help Startups / SMEs / Business owners get connected with 
+                                    the investors for the funds you want to raise to expand your business.
+                                </p>
+                            </center>
+                        </div>
+                        <div class="col-lg-4">
+                            <center>
+                            <img src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/Artboard-8.png"
+                                style="width:37%; height:auto;">
+                                <h5><b>Investors</b></h5>
+                                <p>
+                                    We help Startups / SMEs / Business owners get connected with 
+                                    the investors for the funds you want to raise to expand your business.
+                                </p>
+                            </center>  
+                        </div>
+                    </div>    
+            </section>
+                
+            <section class="col-lg-12">
+                    <div class="row">
+                      <div class="col-md-12">
+                          <br/><br/>
+                          <center>
+                            <h4><b>Investors</b></h4>
+                          </center>
+                        <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-4" id="card">
+                                        <div class="row">
+                                            <div class="col-sm-12" id="data">
+                                                <div class="col-sm-3" id="avtr">
+                                                    <img src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/website-38.png" style="width: 80px;
+                                                    height: auto;
+
+
+margin-left: -9px;">
+                                                </div>
+                                                <a style="margin-left: 57px;color:black;font-size: 16px;">
+                                                   <b>5 lakh - 5 crore</b>
+                                                </a>
+                                                <p style="margin-left:57px;">
+                                                    <a><i class="fas fa-briefcase"></i>&nbsp;Consultant at PWC</a>
+                                                    <br>
+                                                    <a><i class="fas fa-info-circle"></i>
+                                                        &nbsp;Director, Online Services, Individual Buyer, Gurgaon, India
+                                                    </a>
+                                                        <br>
+                                                    <a>
+                                                        <i class="fas fa-map-marker-alt"></i>&nbsp;Delhi, Gurgaon, Navi Mumbai
+                                                    </a>
+                                                        <br>
+                                                    <a>
+                                                        <i class="fas fa-industry"></i>&nbsp;Job Portals, Employment Services, 
+                                                        Education Portals, FinTech, Ecommerce Websites,
+                                                        Gaming Websites, Financial Websites, 
+                                                        Search Engine Websites, Social Network Websites
+                                                    </a>
+                                                </p>
+                                               
+                        
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="col-md-2"></div>
+                                <div class="col-md-4" id="card">
+                                            <div class="row">
+                                                <div class="col-sm-12" id="data">
+                                                    <div class="col-sm-3" id="avtr">
+                                                        <img src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/website-39.png" style="width: 80px;
+                                                        height: auto;
+                                                        margin-left: -9px;">
+                                                    </div>
+                                                    <a style="margin-left: 57px;color:black;font-size: 16px;">
+                                                       <b>5 lakh - 5 crore</b>
+                                                    </a>
+                                                    <p style="margin-left:57px;">
+                                                        <a><i class="fas fa-briefcase"></i>&nbsp;Consultant at PWC</a>
+                                                        <br>
+                                                        <a><i class="fas fa-info-circle"></i>
+                                                            &nbsp;Director, Online Services, Individual Buyer, Gurgaon, India
+                                                        </a>
+                                                            <br>
+                                                        <a>
+                                                            <i class="fas fa-map-marker-alt"></i>&nbsp;Delhi, Gurgaon, Navi Mumbai
+                                                        </a>
+                                                            <br>
+                                                        <a>
+                                                            <i class="fas fa-industry"></i>&nbsp;Job Portals, Employment Services,
+
+
+Education Portals, FinTech, Ecommerce Websites,
+                                                            Gaming Websites, Financial Websites, 
+                                                            Search Engine Websites, Social Network Websites
+                                                        </a>
+                                                    </p>
+                                                    
+                            
+                                                </div>
+                                            </div>
+                                </div>
+                                <div class="col-md-1"></div>
+            
+                        </div>
+                            
+                          
+            
+                      </div>
+                      <div class="col-md-12">
+                          <br/><br/><br/><br/>
+                          <center>
+                            <a href="incards.html" type="button"
+                            style="border:1px solid black; 
+                                   background-color:#dbf2bb;
+                                   color: black;
+                                   text-decoration: none;
+                                   width: 191px;
+                                   height: auto;
+                                   padding: 22px;
+                                   margin-top: 10px;">
+                                Browse all Investors
+                            </a>
+                          </center> 
+                      </div>     
+                    </div>   
+            </section>
+            
+            <section class="col-lg-12">
+                        <div class="row">
+                          <div class="col-md-12">
+                              <br/><br/>
+                              <center>
+                                <h4><b>Business Owners</b></h4>
+                              </center>
+                            <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-4" id="card">
+                                            <div class="row">
+                                                <div class="col-sm-12" id="data">
+                                                    <div class="col-sm-3" id="avtr">
+                                                        <img src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/website-38.png" style="width: 80px;
+                                                        height: auto;
+                                                        margin-left: -9px;">
+                                                    </div>
+                                                    <a style="margin-left: 57px;color:black;font-size: 16px;">
+                                                       <b>5 lakh - 5 crore</b>
+                                                    </a>
+                                                    <p style="margin-left:57px;">
+                                                        <a><i class="fas fa-briefcase"></i>&nbsp;Consultant at PWC</a>
+                                                        <br>
+                                                        <a><i class="fas fa-info-circle"></i>
+                                                            &nbsp;Director, Online Services, Individual Buyer, Gurgaon, India
+                                                        </a>
+                                                            <br>
+                                                        <a>
+                                                            <i class="fas fa-map-marker-alt"></i>&nbsp;Delhi, Gurgaon, Navi Mumbai
+                                                        </a>
+                                                            <br>
+                                                        <a>
+
+<i class="fas fa-industry"></i>&nbsp;Job Portals, Employment Services, 
+                                                            Education Portals, FinTech, Ecommerce Websites,
+                                                            Gaming Websites, Financial Websites, 
+                                                            Search Engine Websites, Social Network Websites
+                                                        </a>
+                                                    </p>
+                                                   
+                            
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-4" id="card">
+                                                <div class="row">
+                                                    <div class="col-sm-12" id="data">
+                                                        <div class="col-sm-3" id="avtr">
+                                                            <img src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/website-39.png" style="width: 80px;
+                                                            height: auto;
+                                                            margin-left: -9px;">
+                                                        </div>
+                                                        <a style="margin-left: 57px;color:black;font-size: 16px;">
+                                                           <b>5 lakh - 5 crore</b>
+                                                        </a>
+                                                        <p style="margin-left:57px;">
+                                                            <a><i class="fas fa-briefcase"></i>&nbsp;Consultant at PWC</a>
+                                                            <br>
+                                                            <a><i class="fas fa-info-circle"></i>
+                                                                &nbsp;Director, Online Services, Individual Buyer, Gurgaon, India
+                                                            </a>
+                                                                <br>
+                                                            <a>
+                                                                <i class="fas fa-map-marker-alt"></i>&nbsp;Delhi, Gurgaon, Navi Mumbai
+                                                            </a>
+                                                                <br>
+                                                            <a>
+                                                                <i class="fas fa-industry"></i>&nbsp;Job Portals, Employment Services, 
+                                                                Education Portals, FinTech, Ecommerce Websites,
+                                                                Gaming Websites, Financial Websites, 
+                                                                Search Engine Websites, Social Network Websites
+                                                            </a>
+                                                        </p>
+                                                        
+                                
+                                                    </div>
+                                                </div>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                
+                            </div>
+                                
+                              
+                
+                          </div>
+                          <div class="col-md-12">
+                              <br/><br/><br/><br/>
+                              <center>
+                                <a href="incards.html" type="button"
+
+
+style="border:1px solid black; 
+                                       background-color:#dbf2bb;
+                                       color: black;
+                                       text-decoration: none;
+                                       width: 191px;
+                                       height: auto;
+                                       padding: 22px;
+                                       margin-top: 10px;">
+                                    Browse all Business Owners
+                                </a>
+                              </center> 
+                          </div>     
+                        </div>   
+            </section>   
+        
+</body>            
+
+
+{% include 'foot.html' %}
+
+
+
+</html>
+ 
 
 
 
@@ -284,4 +1253,4 @@
 
 
 
-{% include 'foot.html' %}
+

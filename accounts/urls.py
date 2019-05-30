@@ -9,9 +9,9 @@ urlpatterns = [
      path('admin/', admin.site.urls),
      path('user/', include('django.contrib.auth.urls'), name='login'),
      path('user/signup/' , views.signup, name='signup'),
-     path('user/signup/phone-verification' , views.validate, name='otp'),
-     path('auth/',include('social_django.urls',namespace='social' )),
-     path('user/change_password',views.change_password,name='change_password'),
+     path('user/signup/phone-verification' , views.validate , name='otp'),
+     path('auth/',include('social_django.urls', namespace='social' )),
+     path('user/change_password',views.change_password , name='passwd '),
      path('user/profile',views.profile_view, name='profile'),
      path('user/editprofile',views.edit_profile, name='edit_profile'),
      
