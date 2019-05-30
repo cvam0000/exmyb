@@ -1,0 +1,12 @@
+
+
+
+
+
+<form method="post">
+    {% csrf_token %}
+    {%for g,h in m%}
+{{g}}{{h}}
+{% endfor %}
+    <button type="submit">next</button>
+  </form>
