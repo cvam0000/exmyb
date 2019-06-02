@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" type="text/css" href="./css/blogpost.css">  
+          <link rel="stylesheet" type="text/css" href="./css/foot.css">  
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+          <link href='https://fonts.googleapis.com/css?family=Maven Pro' rel='stylesheet'>
+          <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+    </head>
+    <body>
+        {% include 'nav,html' %}
+            <div class="container">
+
+                    <div class="row">
+                
+                      <!-- Post Content Column -->
+                      <div class="col-lg-8">
+                            {% if post.published_date %}
+                        <!-- Title -->
+                        <h1 class="mt-4">{{ post.title }}</h1>
+                
+                        <!-- Author -->
+                        
+                
+                        <hr>
+                
+                        <!-- Date/Time -->
+                        <a><i class="far fa-calendar-alt" style="color:#8ac832;"></i>&nbsp;{{ post.published_date }}</a>
+                         <br/>
+                         <a>Posted By</a> 
+                        <hr>
+                
+                        <!-- Preview Image -->
+                        <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+                
+                        <hr>
+                
+                        <!-- Post Content -->
+
+                        
+            <div class="date">
+                
+            </div>
+        {% endif %}
+        <h2></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+                        
+                
+                        <hr>
+                
+                        
+                       
+
+                       <div class="col-md-9" style="border: 1px solid #dcd7d7;">
+                             <br/><br/>                            
+                            <center>
+                                    <div class="col-sm-9">
+                                      <h5 class="card-header" style="background-color:#8ac832;color:white; border: none;">Leave a Comment:</h5>
+                                      <div class="card-body" style="background-color:transparent;">
+                                        <form>
+                                          <div class="form-group">
+                                            <textarea class="form-control" rows="3"></textarea>
+                                          </div>
+                                          <center>
+                                          <button type="submit" class="button" style="padding:10px;background-color:#8ac832;color:white; border: none;">Post</button>
+                                          </center>
+                                        </form>
+                                      </div>
+                                    </div>
+                            </center><!-- Comments Form -->
+                        <!-- Single Comment -->
+                             <hr>
+                            <div class="media mb-4">
+                          <img class="d-flex mr-3 rounded-circle" 
+                          src="./assets/img/website-38.png" style="border:1px solid black;width:50px;height:auto;">
+                          <div class="media-body">
+                            <h5 class="mt-0">Commenter Name</h5>
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                          </div>
+                            </div>
+                           <hr>
+                        <!-- Comment with nested comments -->
+                            <div class="media mb-4">
+                                    <img class="d-flex mr-3 rounded-circle" 
+                                    src="./assets/img/website-38.png" style="border:1px solid black;width:50px;height:auto;">
+                          <div class="media-body">
+                            <h5 class="mt-0">Commenter Name</h5>
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                            <hr>
+                            <div class="media mt-4">
+                                    <img class="d-flex mr-3 rounded-circle" 
+                                    src="./assets/img/website-39.png" style="border:1px solid black;width:50px;height:auto;">
+                              <div class="media-body">
+                                <h5 class="mt-0">Commenter Name</h5>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                              </div>
+                            </div>
+                            <hr>
+                            <div class="media mt-4">
+                                    <img class="d-flex mr-3 rounded-circle" 
+                                    src="./assets/img/website-38.png" style="border:1px solid black;width:50px;height:auto;">
+                              <div class="media-body">
+                                <h5 class="mt-0">Commenter Name</h5>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                              </div>
+                            </div>
+                
+                          </div>
+                            </div>
+                        </div>
+
+                      </div>
+                
+                      <!-- Sidebar Widgets Column -->
+                      <div class="col-md-4">
+                
+                        <!-- Search Widget -->
+                        <div class="card my-4">
+                                <table class="table">
+                                        <thead>
+                                          <tr>
+                                            <th style="background-color:#8ac832;color:white;"><center>New Posts</center></th>
+                                            
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td>John</td>
+                                            
+                                          </tr>
+                                          <tr>
+                                            <td>Mary</td>
+                                            
+                                          </tr>
+                                          <tr>
+                                            <td>July</td>
+                                            
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                        </div>
+                
+                        
+                
+                      </div>
+                
+                    </div>
+                    <!-- /.row -->
+                
+                  </div>
+{% include 'foot.html'%}
+
+    </body>
+    
+</html> 

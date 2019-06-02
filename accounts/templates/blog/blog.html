@@ -44,8 +44,8 @@
           <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
           <div class="card-body">
             <h2 class="card-title">{{ blog.title }}</h2>
-            <p class="card-text">{{ blog.body_text }}</p>
-            <a href="blogpost.html" class="button" style="background-color: #8ac832; color:white;padding: 10px;">Continue Reading &rarr;</a>
+            
+            <a href="{% url 'post_detail' pk=post.pk %}" class="button" style="background-color: #8ac832; color:white;padding: 10px;">Continue Reading &rarr;</a>
           </div>
           <div class="card-footer text-muted">
             <a><i class="far fa-calendar-alt" style="color:#8ac832;"></i>&nbsp;May 28,2019</a>
