@@ -54,7 +54,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{%url 'home' %}" id="home_1"><b>HOME</b></a>
+              <a class="nav-link" href="{%url 'index' %}" id="home_1"><b>HOME</b></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="home_2"><b>BUSINESS OWNER</b></a>
@@ -95,6 +95,12 @@
             <li class="nav-item">
               <a class="nav-link" href="{%url 'faq' %}" id="home_6"><b>FAQ</b></a>
             </li> 
+
+            <li class="nav-item">
+                <a class="nav-link" href="{%url 'services' %}" id="home_6"><b>SERVICES</b></a>
+              </li> 
+
+                
             </ul> 
             <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -108,7 +114,7 @@
                 padding: 0px;
                 background-color: #8ac832;
                 color: white;
-                border: transparent;
+                border: tr{% url 'investor' %}ansparent;
                 font-size: 14px;">
                   <a class="nav-link" href="{%url 'logout' %}" style="color:white;"><b>Logout</b></a>
                  </button> 

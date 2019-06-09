@@ -12,6 +12,7 @@ urlpatterns = [
     path( 'faq' ,views.faq, name="faq"),
     path( 'investors' ,views.investor, name="investor"),
     path( 'startups' ,views.startup, name="startup"),
+    path('services',views.services, name="services")
    # path(  , nsme =""),
     
 ]

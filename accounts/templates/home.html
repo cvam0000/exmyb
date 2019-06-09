@@ -268,744 +268,268 @@
 
 {% else %}
 
+
+{% include 'nav.html' %}
+
+<!--
 <!DOCTYPE html>
 <html>
-    
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="./css/head.css"> 
-    <link rel="stylesheet" type="text/css" href="./css/foot.css">  
-    
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
-    <link href='https://fonts.googleapis.com/css?family=Maven Pro' rel='stylesheet'>
-    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-
-
-   <style>
-   
-   .button:hover {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.button {
-  display: inline-block;
-  border-radius: 4px;
-  background-color:#8ac832;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 20px;
-  padding: 15px;
-  width: 200px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
-
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.button:hover span {
-  padding-right: 25px;
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-
-#myCarousel .carousel-item .mask {
-    position: absolute;
-    top: 0;
-	left:0;
-	height:100%;
-    width: 100%;
-    background-attachment: fixed;
-}
-#myCarousel h4{
-	font-size:50px;
-	margin-bottom:15px;
-	color:#FFF;
-	line-height:100%;
-	letter-spacing:0.5px;
-	font-weight:600;
-}
-#myCarousel p{
-	font-size:18px;
-	margin-bottom:15px;
-	color:#d5d5d5;
-}
-#myCarousel .carousel-item a{background:#F47735; font-size:14px; color:#FFF; padding:13px 32px; display:inline-block; }
-#myCarousel .carousel-item a:hover{background:#394fa2; text-decoration:none;  }
-
-#myCarousel .carousel-item h4{-webkit-animation-name:fadeInLeft; animation-name:fadeInLeft;} 
-#myCarousel .carousel-item p{-webkit-animation-name:slideInRight; animation-name:slideInRight;} 
-#myCarousel .carousel-item a{-webkit-animation-name:fadeInUp; animation-name:fadeInUp;}
-#myCarousel .carousel-item .mask img{-webkit-animation-name:slideInRight; animation-name:slideInRight; display:block; height:auto; max-width:100%;}
-#myCarousel h4, #myCarousel p, #myCarousel a, #myCarousel .carousel-item .mask img{-webkit-animation-duration: 1s;
-    animation-duration: 1.2s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-#myCarousel .container {max-width: 1430px;  }
-#myCarousel .carousel-item{height:100%; min-height:550px; }
-#myCarousel{position:relative; z-index:1; 
-
-    background: -webkit-linear-gradient(-16deg, rgb(129, 206, 56), rgb(73, 119, 7));
-background: linear-gradient(-16deg, rgb(129, 206, 56), rgb(73, 119, 7));
-
-}
-
-.carousel-control-next, .carousel-control-prev{
-    display:none; }
-
-
-.carousel-item {
-    position: relative;
-    display: none;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    width: 100%;
-    transition: -webkit-transform .6s ease;
-    transition: transform .6s ease;
-    transition: transform .6s ease,-webkit-transform .6s ease;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-perspective: 1000px;
-    perspective: 1000px;
-}
-.carousel-fade .carousel-item {
-	opacity: 0;
-	-webkit-transition-duration: .6s;
-	transition-duration: .6s;
-	-webkit-transition-property: opacity;
-	transition-property: opacity;
-}
-.carousel-fade .carousel-item-next.carousel-item-left, .carousel-fade .carousel-item-prev.carousel-item-right, .carousel-fade .carousel-item.active {
-	opacity: 1
-}
-.carousel-fade .carousel-item-left.active, .carousel-fade .carousel-item-right.active {
-	opacity: 0
-}
-.carousel-fade .carousel-item-left.active, .carousel-fade .carousel-item-next, .carousel-fade .carousel-item-prev, .carousel-fade .carousel-item-prev.active, .carousel-fade .carousel-item.active {
-	-webkit-transform: translateX(0);
-	-ms-transform: translateX(0);
-	transform: translateX(0)
-}
-@supports (transform-style:preserve-3d) {
-	.carousel-fade .carousel-item-left.active, .carousel-fade .carousel-item-next, .carousel-fade .carousel-item-prev, .carousel-fade .carousel-item-prev.active, .carousel-fade .carousel-item.active {
-	-webkit-transform:translate3d(0, 0, 0);
-	transform:translate3d(0, 0, 0)
-	}
-}
-.carousel-fade .carousel-item-left.active, .carousel-fade .carousel-item-next, .carousel-fade .carousel-item-prev, .carousel-fade .carousel-item-prev.active, .carousel-fade .carousel-item.active {
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
-}
-
-
- 
-@-webkit-keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.fadeInLeft {
-  -webkit-animation-name: fadeInLeft;
-  animation-name: fadeInLeft;
-}
-
-@-webkit-keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.fadeInUp {
-  -webkit-animation-name: fadeInUp;
-  animation-name: fadeInUp;
-}
-
-@-webkit-keyframes slideInRight {
-  from {
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-    visibility: visible;
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-    visibility: visible;
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.slideInRight {
-  -webkit-animation-name: slideInRight;
-  animation-name: slideInRight;
-}
-
-
-
-
-
-.cta-100 {
-  margin-top: 100px;
-  padding-left: 8%;
-  padding-top: 7%;
-}
-.col-md-4{
-    padding-bottom:20px;
-}
-
-.white {
-  color: #fff !important;
-}
-.mt{float: left;margin-top: -20px;padding-top: 20px;}
-.bg-blue-ui {
-  background-color: #708198 !important;
-}
-figure img{width:300px;}
-
-#blogCarousel {
-  padding-bottom: 100px;
-}
-
-.blog .carousel-indicators {
-  left: 0;
-  top: -50px;
-  height: 50%;
-}
-
-
-/* The colour of the indicators */
-
-.blog .carousel-indicators li {
-  background: #ddd;
-  width: 8px;
-  height: 8px;
-}
-
-.blog .carousel-indicators .active {
-  background: #41cb52;
-}
-
-
-
-
-.item-carousel-blog-block {
-  outline: medium none;
-  padding: 15px;
-}
-
-.item-box-blog {
-  border: 1px solid #41cb52;
-  text-align: center;
-  z-index: 4;
-  padding: 20px;
-}
-
-.item-box-blog-image {
-  position: relative;
-}
-
-.item-box-blog-image figure img {
-  width: 100%;
-  height: auto;
-}
-
-.item-box-blog-date {
-  position: absolute;
-  z-index: 5;
-  padding: 4px 20px;
-  top: -20px;
-  right: 8px;
-  background-color: #41cb52;
-}
-
-.item-box-blog-date span {
-  color: #fff;
-  display: block;
-  text-align: center;
-  line-height: 1.2;
-}
-
-.item-box-blog-date span.mon {
-  font-size: 18px;
-}
-
-.item-box-blog-date span.day {
-  font-size: 16px;
-}
-
-.item-box-blog-body {
-  padding: 10px;
-}
-
-.item-heading-blog a h5 {
-  margin: 0;
-  line-height: 1;
-  text-decoration:none;
-  transition: color 0.3s;
-}
-
-.item-box-blog-heading a {
-    text-decoration: none;
-}
-
-.item-box-blog-data p {
-  font-size: 13px;
-}
-
-.item-box-blog-data p i {
-  font-size: 12px;
-}
-
-.item-box-blog-text {
-  max-height: 100px;
-  overflow: hidden;
-  padding:10px 0px;
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-.mt-10 {
-  float: left;
-  margin-top: -10px;
-  padding-top: 10px;
-}
-
-.btn-green{
-    font-weight: bold;
-  background-color: #8AC832 !important;
-  color: white !important
-}
-
-
-.full-wd{
-    width: 100vw;
-    overflow-x: hidden;
-    padding: 50px 0px;
-    background-color: #E9F4D9;
-    margin-top: 50px;
-}
-
-.carousel-in .carousel-item .rowcol-md-4{
-border: 2px solid #BADE86 !important;
-}
-
-.text-em{
-    font-size: 1.2em;
-}
-
-.text-em-2{
-    font-size: 1em;
-}
-
-   </style>
-                     
-</head>
+  <head>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="206689737250-57omnjb7va1fivk9qcg1hbppatvkgh6n.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </head>
 
 <body>
-    {% include 'nav.html' %} 
 
-    <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" style="padding-top:100px;height: 500px;">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="mask flex-center">
-                  <div class="container">
-                    <div class="row align-items-center">
-                      <div class="col-md-7 col-12 order-md-1 order-2">
-                        <h4>Present your <br>
-                          awesome IDEA</h4>
-                        <p >Give the BAT and find out where you really stand in the eyes of a distinguished investor!</p>
-                        <a href="#">BAT</a> </div>
-                      <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/website1.png" class="mx-auto" alt="slide"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="mask flex-center">
-                  <div class="container">
-                    <div class="row align-items-center">
-                      <div class="col-md-7 col-12 order-md-1 order-2">
-                        <h4>Present your <br>
-                          awesome IDEA</h4>
-                        <p>Give the BAT and find out where you really stand in the eyes of a distinguished investor!</p>
-                        <a href="#">BAT</a> </div>
-                      <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/ExMyB_Logo.png" class="mx-auto" alt="slide"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="mask flex-center">
-                  <div class="container">
-                    <div class="row align-items-center">
-                      <div class="col-md-7 col-12 order-md-1 order-2">
-                        <h4>Present your <br>
-                          awesome IDEA</h4>
-                        <p>Give the BAT and find out where you really stand in the eyes of a distinguished investor!.</p>
-                        <a href="#">BAT</a> </div>
-                      <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/website1.png" class="mx-auto" alt="slide"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
-          <!--slide end-->
+<h3> EXMYB TEST LOGIN </h3>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Login</button>
+</form>*{
+    font-family: Maven Pro;
+}
+#home_1, #home_2, #home_3, #home_4, #home_5, #home_6, #home_21, #home_22, #home_31, #home_32{
+    color: black;
+    font-size: 14px;
+}
+#home_1:hover,#home_2:hover,#home_3:hover, #home_4:hover, #home_5:hover, #home_6:hover,
+#home_21:hover, #home_22:hover, #home_31:hover, #home_32:hover {
+    color: #8ac832;
+}
+.bo-content, .in-content{
+    height: auto;
+    width: -1px;
+    list-style: none;
+    border-top: 2px solid #8ac832;
+    text-align: left;
+    box-shadow: 1px 1px 2px 2px #cac2c25c;
+    display:none;
+}
+#home_2:hover .bo-content{
+    display:block;
+}
+<a href="{%url 'signup'%}">Signup</a><br>
+<a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a><br>
+<a href="{% url 'social:begin' backend='linkedin-oauth2' %}">Login with Linkedin</a>
 
-    <div class="container mt-5">
-        <div class="row">
 
-       <div class="col-md-5">
+</body>
+</html>
 
+-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!DOCTYPE html>
+<html>
+
+<header>
+        <link rel="stylesheet" type="text/css" href="./css/login.css">
+        <link rel="stylesheet" type="text/css" href="./css/foot.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+        <link href='https://fonts.googleapis.com/css?family=Maven Pro' rel='stylesheet'>
+        <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+
+  <style>
+    *{
+    font-family: Maven Pro;
+}
+#main{
+    height: auto;
+    padding: 10px;
+    
+    box-shadow: 2px 2px 5px 5px #e6ecdd70;
+}
+#log,#sign{
+    background-color: #8ac832;
+    color:white;
+    border: none;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 4px;
+}
+#log:hover,#sign:hover{
+    background-color: #dbf2bb;
+}
+.input100{
+     border: none;
+     border-bottom: 1px solid black;
+     overflow: hidden;
+}
+.input::after{
+    background-color: transparent;
+}
+
+#connectgoogle,#connectlink {
+    border-radius: 35px;
+    width: 59px;
+    height: auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 19px;
+    border: none;
+    
+  }
   
-        <i class="fa fa-check-square-o" style="font-size:40px;color:#8ac832"></i> &nbsp;  <button class="button" style="vertical-align:middle"><span>   GIVE BAT !  </span></button><br>
-    <img width="450px" class="img-fluid" height="auto" src="https://www.exmyb.com/img/BAT_Illustration.png"></img>
-    
+  #connectgoogle:hover,#connectlink:hover {
+      opacity: 0.7;
+  }
+  
+  #connectgoogle {
+    background: #dd4b39;
+    color: white;
+  }
+  
+  #connectlink {
+    background: #007bb5;
+    color: white;
+  }
+  </style>      
+</header>
 
-</div>
-
-<div class="col-md-7">
-
-
-
-
-<b><h2>Give the BAT and find out where you really stand in the eyes of a distinguished investor!</h2></b>
-<br><div class="card">
-        <div class="card-body"><strong>BAT is a series of questions delivered to businesses designed to give a good assessment of the company’s profile. Take the BAT and get a realistic assessment of where you stand in your industry.</p>
-        </strong>  </div>
-      </div>
-      <br>
-<p class="text-em-2">
-
-<i class="fa fa-check-square-o" style="font-size:30px;color:#8ac832"></i> &nbsp; Featured listing on the platform for investors in your industry<br><br>
-<i class="fa fa-check-square-o" style="font-size:30px;color:#8ac832"></i> &nbsp; Assistance from ExMyB to curate remarkable pitch decks to stand out in market<br><br>
-<i class="fa fa-check-square-o" style="font-size:30px;color:#8ac832"></i> &nbsp; Get expert advice from professionals who can help<br><br>
-<i class="fa fa-check-square-o" style="font-size:30px;color:#8ac832"></i> &nbsp; Let us know of any particular investor you want, and we would help you get connected
-</p>
-
-
-    
-    </div>
-
-
-
-        </div>
-
-    </div>
-
-<section class="full-wd">
-  <div class="container">
-    <div class="row">
-        <div class="col-md-7">
-            <i class="fa fa-check-square-o" style="font-size:40px;color:#8ac832"></i> &nbsp;  <button class="button" style="vertical-align:middle"><span>  Who We Benefit  </span></button><br><br><br>
-
-        <h4> </h4> 
-
-       <h3>
-         
-             
-                <i class="fa fa-check " style="font-size:30px;color:#8ac832"></i> &nbsp;Start-ups    <br>
-
-
-               <i class="fa fa-check" style="font-size:30px;color:#8ac832"></i> &nbsp; Brokers<br>
-        
-                <i class="fa fa-check" style="font-size:30px;color:#8ac832"></i> &nbsp;  Family Business&nbsp;<br>
-                
-                <i class="fa fa-check" style="font-size:30px;color:#8ac832"></i> &nbsp;  Investors<br>
-        
-                
-                <i class="fa fa-check" style="font-size:30px;color:#8ac832"></i> &nbsp;   Merchants &nbsp;<br>
-                
-                <i class="fa fa-check" style="font-size:30px;color:#8ac832"></i> &nbsp;  Professionals <br>
-                
-                <i class="fa fa-check" style="font-size:30px;color:#8ac832"></i> &nbsp;  Small Business &nbsp;<br>
-                
-                <i class="fa fa-check" style="font-size:30px;color:#8ac832"></i> &nbsp;   Industrialists <br>
-
-        
-            </h3>
-        
-        
-        </div>
-
-        <div class="col-md-5">
-                <img width="450px" class="img-fluid" height="auto" src=" https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/Artboard-12.png"></img>
-               
-
-        </div>
-    </div>
-
-   </div>
-</section>
-
-
-
-
-<section style="width:100vw;">
-<div class="container">
-<div class="row">
-        <div class="col-lg-4 p-3">
-                <img class="mx-auto d-block" src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/Artboard-6.png" style="width:50%; height:auto;">
-                <h3 class="text-center"><b>Startups</b></h3>
-                <p class="text-center text-em">
-                    We help Startups / SMEs / Business owners get connected with 
-                    the investors for the funds you want to raise to expand your business.
-                </p>
-        </div>
-        <div class="col-lg-4 p-3">
-               <img class="mx-auto d-block" src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/Artboard-7.png" style="width:50%; height:auto;">
-                <h3 class="text-center"><b>Our Platform</b></h3>
-                <p class="text-center text-em">
-                    We help Startups / SMEs / Business owners get connected with 
-                    the investors for the funds you want to raise to expand your business.
-                </p>
-        </div>
-        <div class="col-lg-4 p-3">
-            <img class="mx-auto d-block"  src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/Artboard-8.png" style="width:50%; height:auto;">
-                <h3 class="text-center"><b>Investors</b></h3>
-                <p class="text-center text-em">
-                    We help Startups / SMEs / Business owners get connected with 
-                    the investors for the funds you want to raise to expand your business.
-                </p> 
-        </div>
-    </div> 
-    </div> 
-</section>  
-
-
-
-<section class="full-wd">
+<body style="font-family:Maven Pro;">
     <div class="container">
-                   
-                    <div class="container">
-                      <div class="row blog">
-                            <i class="fa fa-check-square-o" style="font-size:40px;color:#8ac832"></i> &nbsp;  <button class="button" style="vertical-align:middle"><span>   INVESTORS  </span></button><br><br><br>
-                        <div class="col-md-12">
-                          <div id="blogCarousel" class="carousel slide container-blog" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                              <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
-                              <li data-target="#blogCarousel" data-slide-to="1"></li>
-                            </ol>
-                            <!-- Carousel items -->
-                            <div class="carousel-inner carousel-in">
-                              <div class="carousel-item active">
-                                <div class="row">
-                                  <div class="col-md-4" >
-                                    <div class="item-box-blog">
-                                      <div class="item-box-blog-image">
-                                       
-                                        <!--Image-->
-                                        <figure> <img style ="width:70%;" alt="" src="https://static.thenounproject.com/png/17241-200.png"> </figure>
-                                      </div>
-                                      <div class="item-box-blog-body">
-                                        <div class="item-box-blog-text">
-                                          <p>Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor.</p>
-                                        </div>
-                                        <div class="mt"> <a href="#" tabindex="0" class="btn btn-green">read more</a> </div>
-                                        <!--Read More Button-->
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-4" >
-                                    <div class="item-box-blog">
-                                      <div class="item-box-blog-image">
-                                        <!--Date-->
-                                        <!--Image-->
-                                        <figure> <img style ="width:70%;" alt="" src="https://static.thenounproject.com/png/17241-200.png"> </figure>
-                                      </div>
-                                      <div class="item-box-blog-body">
-                                        <div class="item-box-blog-text">
-                                          <p>Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor.</p>
-                                        </div>
-                                        <div class="mt"> <a href="#" tabindex="0" class="btn btn-green">Explore More </a> </div>
-                                        <!--Read More Button-->
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-4" >
-                                    <div class="item-box-blog">
-                                      <div class="item-box-blog-image">
-                                        <!--Date-->
-                                        <!--Image-->
-                                        <figure> <img style ="width:70%;" alt="" src="https://static.thenounproject.com/png/17241-200.png"> </figure>
-                                      </div>
-                                      <div class="item-box-blog-body">
-                                        
-                                        <div class="item-box-blog-text">
-                                          <p>Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor.</p>
-                                        </div>
-                                        <div class="mt"> <a href="#" tabindex="0" class="btn btn-green">Explore More </a> </div>
-                                        <!--Read More Button-->
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <!--.row-->
-                              </div>
-                              <!--.item-->
-                              <div class="carousel-item ">
-                                <div class="row">
-                                  <div class="col-md-4" >
-                                    <div class="item-box-blog">
-                                      <div class="item-box-blog-image">
-                                        <!--Date-->
-                                        <!--Image-->
-                                        <figure> <img style ="width:70%;" alt="" src="https://static.thenounproject.com/png/17241-200.png"> </figure>
-                                      </div>
-                                      <div class="item-box-blog-body">
-                                       
-                                        <div class="item-box-blog-text">
-                                          <p>Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor.</p>
-                                        </div>
-                                        <div class="mt"> <a href="#" tabindex="0" class="btn btn-green">Explore More </a> </div>
-                                        <!--Read More Button-->
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-4" >
-                                    <div class="item-box-blog">
-                                      <div class="item-box-blog-image">
-                                        <!--Date-->
-                                        <!--Image-->
-                                        <figure> <img style ="width:70%;"alt="" src="https://static.thenounproject.com/png/17241-200.png"> </figure>
-                                      </div>
-                                      <div class="item-box-blog-body">
-                                      
-                                        <div class="item-box-blog-text">
-                                          <p>Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor.</p>
-                                        </div>
-                                        <div class="mt"> <a href="#" tabindex="0" class="btn btn-green">Explore More </a> </div>
-                                        <!--Read More Button-->
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-4" >
-                                    <div class="item-box-blog">
-                                      <div class="item-box-blog-image">
-                                        <!--Date-->
-                                        <!--Image-->
-                                        <figure> <img style ="width:70%;"alt="" src="https://static.thenounproject.com/png/17241-200.png"> </figure>
-                                      </div>
-                                      <div class="item-box-blog-body">
-                                       
-                                        <div class="item-box-blog-text">
-                                          <p>Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor.</p>
-                                        </div>
-                                         <div class="mt"> <a href="#" tabindex="0" class="btn btn-green">Explore More
-
-                                         </a> </div>
-                                        <!--Read More Button-->
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <!--.row-->
-                              </div>
-                              <!--.item-->
-                            </div>
-                            <!--.carousel-inner-->
-                          </div>
-                          <!--.Carousel-->
-                        </div>
-                      </div>
-                    </div>
-    </div>
-</section>
-               
-            
         
+         <div class="row">
+            
+            <div class="col-md-4"></div>
+            
+            
+            <div class="col-md-4" id="main">
+                <div class="row">
+                    
+                    <div class="col-md-3"></div>
+                    
+                    <div class="col-lg-6">
+                       <center>  
+                          <a   href="{%url 'login' %}">
+                              <button type="button" id="log">Log In</button>
+                          </a>    
+                          <a href="{%url 'signup' %}">
+                              <button type="button" id="sign">Sign Up</button>
+                          </a>    
+                       </center> 
+                    </div>
+
+                    <div class="col-md-3"></div>
+                    
+                    
+                    <div class="w-100"></div>
 
 
 
-{% include 'foot.html' %}
+                    <div class="col-md-12">
+        
+                           <form   method="post" >
+                              <input type="hidden" name="csrfmiddlewaretoken" value="AWTRNaPOW1lPC3FWoBVlGg6MCuJUxWvR9suUYJWY2aACPTbTIBw1pCKJ5x59XGIF">
+                              {% csrf_token %}
+                            
+                              <div class="wrap-input100 validate-input" 
+                                 data-validate = "Email is required" style="padding:10px;">
+                                 <a style="font-family: Maven Pro;font-size: 14px;">
+                                    <i class="fas fa-envelope">&nbsp;Email</i>
+                                 </a><br/>
+                                 <input class="col-sm-12 input100" id="id_username"  autofocus="" required=""type="text" name="username">
+                              </div>
+                              <br/>
+                    </div>
+                    <div class="w-100"></div>
+
+                    <div class="col-md-12">
+                          
+                            <div class="wrap-input100 validate-input" 
+                               data-validate = "Password is required" style="padding:10px;">
+                               <br/>
+                               <a style="font-family: Maven Pro;font-size: 14px;">
+                                  <i class="fas fa-lock">&nbsp;Password</i>
+                               </a><br/>
+                               <input class="col-sm-12 input100" id="id_password "  autofocus="" required="" type="password" name="password">
+                            </div>
+                  </div>
+
+                    <div class="w-100"></div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <br>
+                        <center>
+                          <button type="submit" class="btn" 
+                          style="background-color: #8ac832;
+                          color:white;
+                          border: none;
+                          text-decoration: none;
+                          padding: 10px;
+                          border-radius: 4px;">Log In</button>
+                        </center>
+
+                      </form>  
 
 
+
+                    </div>
+                    <div class="col-md-4"></div>
+
+                    <div class="w-100"></div>
+
+                    <div class="col-md-12" style="padding-left:28px;">
+                        <br>
+                        <p style="font-size:14px;">Forgot Password?<a href="forgotpwd.html">&nbsp;Reset</a></p>
+                    </div>
+
+                    <div class="w-100"></div>
+
+
+<div class="col-md-12">
+                        <center>
+                       <a style="font-size:14px;"><b>Or Login With</b></a>
+                        </center>
+                        <br/>
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-lg-6">
+                        <center> 
+                            <a href="{% url 'social:begin' 'google-oauth2' %}"> <button href="#" class="fab fa-google" id="connectgoogle"></button></a>
+                            <a href="{% url 'social:begin' backend='linkedin-oauth2' %}  <button href="#" class="fab fa-linkedin-in" id="connectlink"></button></a>
+                                
+                        </center>  
+                    </div>
+                    <div class="col-md-3"></div>
+
+                
+
+
+                </div>    
+            </div>
+            
+            
+            <div class="col-md-4"></div>
+            <div class="col-md-12">
+                <center>
+                <p><br/>By signing up you agree to our <a href="tandc.html">Terms of Service</a> 
+                    and <a href="pp.html">Privacy Policy</a></p>
+                </center>    
+            </div>    
+        </div>    
+
+    </div>    
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% include 'foot.html' %}   
 
 </html>
- 
+
+
 
 
 

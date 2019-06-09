@@ -26,4 +26,5 @@ urlpatterns = [
     path('blog',include('blog.urls')),
     path('about/', include('static_pages.urls'))
     
+    
 ]

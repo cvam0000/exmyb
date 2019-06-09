@@ -25,4 +25,9 @@ def investor(request):
 
 
 def startup(request):
-    return render(request, 'static_pages/startup.html')       
+    return render(request, 'static_pages/startup.html') 
+
+
+
+def services(request):
+    return render(request, 'static_pages/services.html')          
