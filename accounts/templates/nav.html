@@ -15,12 +15,22 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
     <style>
       *{
     font-family: Maven Pro;
+    color:black;
+}
+
+
+.navbar{
+  background-color:lightgray;
 }
 #home_1, #home_2, #home_3, #home_4, #home_5, #home_6, #home_21, #home_22, #home_31, #home_32{
-    color: black;
+    color: white;
     font-size: 14px;
 }
 #home_1:hover,#home_2:hover,#home_3:hover, #home_4:hover, #home_5:hover, #home_6:hover,
@@ -43,17 +53,146 @@
     </style>
 </header>
 <body>
-<div class="container-fluid">
-    <nav class="navbar navbar-expand-lg  navbar-dark" style="height:100px">
-        <a class="navbar-brand">
-          <img href="{%url 'home' %}" src="https://raw.githubusercontent.com/1cvam/1cvam.github.io/master/assets/img/ExMyB_Logo.png" style="margin-top: -10px; width: 150px;height: auto;">
-        </a>
-        <button font-color="black"class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon">  <i style="font-size:24px" class="fa">&#xf0c9;</i></span>
+
+
+  <!----  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <img href="{%url 'home' %}" src="https://www.exmyb.com/img/logo.png" width="200px" >
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav">
             <li class="nav-item">
+                <a class="nav-link" href="{%url 'index' %}" id="home_1"><b>HOME</b></a>
+            </li>
+            <li class="nav-item">
+                <li class="nav-item">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="home_2"><b>BUSINESS OWNER</b></a>
+                      <ul class="dropdown-menu bo-content" style="margin-left: 147px;
+                      border: transparent;
+                      border-top: 5px solid #8ac832;
+                      border-radius: 0px;">
+                        <li>
+                          <a class="nav-link dropdown-item" href="{% url 'investor' %}" id="home_31"><b>Connect with Investor</b></a> 
+                          
+                        </li>
+                        <li>
+                            <a class="nav-link dropdown-item" href="{%url 'startup'%}" id="home_32"><b>Connect with Fellow Business Owner</b></a>
+                        </li>
+                      </ul>
+                  </li>    
+            </li>
+            <li class="nav-item">
+                <li class="nav-item">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="home_3"><b>INVESTOR</b></a>
+                      <ul class="dropdown-menu in-content" style="margin-left: 285px;
+                      border: transparent;
+                      border-top: 5px solid #8ac832;
+                      border-radius:0px;">
+                        <li>
+                          <a class="nav-link dropdown-item" href="{% url 'investor' %}" id="home_31"><b>Connect with Business Owner</b></a> 
+                          
+                        </li>
+                        <li>
+                            <a class="nav-link dropdown-item" href="{%url 'startup'%}" id="home_32"><b>Connect with Fellow Investor</b></a>
+                        </li>
+                      </ul>
+                  </li> 
+            </li> 
+            
+            <li class="nav-item">
+                <a class="nav-link" href="{%url 'about' %}" id="home_4"><b>ABOUT</b></a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link" href="{%url 'blog' %}" id="home_5"><b>BLOG</b></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{%url 'faq' %}" id="home_6"><b>FAQ</b></a>
+                  </li>
+
+
+
+                  <li class="nav-item">
+                      <a class="nav-link" href="{%url 'faq' %}" id="home_6"><b>FAQ</b></a>
+                    </li>
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'services' %}" id="home_6"><b>SERVICES</b></a>
+                      </li>
+
+
+
+                      <li class="nav-item">
+                          <a class="nav-link" href="{%url 'tc' %}" id="home_6"><b>TERMS & CONDITIONS </b></a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                    
+                    
+                    
+                                    {% if user.is_authenticated %}
+                    
+                                    <a  class="dropdown-toggle" data-toggle="dropdown">
+                                        <img width="60"src="https://technovechno.com/wp-content/uploads/2018/05/authoravatar.png"></b></a>
+                                   
+                                    </a>
+                                      <div  class="dropdown-menu" style="margin-left: 90%;
+                                      border: transparent;
+                                      border-top: 5px solid #8ac832;
+                                      border-radius: 0px;">
+                                        <a class="dropdown-item" href="{%url 'logout' %}">Logout</a>
+                                        
+                                      </div>
+                                   
+                                     
+                                   
+                                  {% else %}
+                                  <button style="width: 86px;
+                                  margin-top: -10px;
+                                  height: auto;
+                                  padding: 0px;
+                                  background-color: #8ac832;
+                                  color: white;
+                                  border: transparent;
+                                  font-size: 14px;">
+                                    <a class="nav-link" href="{%url 'login' %}" style="color:white;"><b>Login</b></a>
+                                   </button> 
+                                  {% endif %}
+                                  
+                    
+                    
+                                    
+                    
+                    
+                    
+                    
+                    
+                    
+                                </li>
+                          </li>
+          </ul>
+        </div>  
+      </nav>
+
+------->
+
+    <nav class="navbar navbar-expand-md  navbar-dark">
+        <a class="navbar-brand">
+            <img href="{%url 'home' %}" src="https://www.exmyb.com/img/logo.png" width="200px" >
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
               <a class="nav-link" href="{%url 'index' %}" id="home_1"><b>HOME</b></a>
             </li>
             <li class="nav-item">
@@ -100,7 +239,9 @@
                 <a class="nav-link" href="{%url 'services' %}" id="home_6"><b>SERVICES</b></a>
               </li> 
 
-                
+              <li class="nav-item">
+                <a class="nav-link" href="{%url 'tc' %}" id="home_6"><b>TERMS & CONDITIONS </b></a>
+              </li>    
             </ul> 
             <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -108,16 +249,20 @@
 
 
                 {% if user.is_authenticated %}
-                <button style="width: 86px;
-                margin-top: -10px;
-                height: auto;
-                padding: 0px;
-                background-color: #8ac832;
-                color: white;
-                border: tr{% url 'investor' %}ansparent;
-                font-size: 14px;">
-                  <a class="nav-link" href="{%url 'logout' %}" style="color:white;"><b>Logout</b></a>
-                 </button> 
+
+                <a  class="dropdown-toggle" data-toggle="dropdown">
+                    <img width="60"src="https://technovechno.com/wp-content/uploads/2018/05/authoravatar.png"></b></a>
+               
+                </a>
+                  <div  class="dropdown-menu" style="margin-left: 85%;
+                  border: transparent;
+                  border-top: 5px solid #8ac832;
+                  border-radius: 0px;">
+                    <a class="dropdown-item" href="{%url 'logout' %}">Logout</a>
+                    
+                  </div>
+               
+                 
                
               {% else %}
               <button style="width: 86px;
@@ -146,7 +291,7 @@
         </div>  
     </nav>
     
-</div>    
+ 
 
 
 </body>
