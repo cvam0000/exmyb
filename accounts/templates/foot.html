@@ -8,8 +8,6 @@
             <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     
             <hr>
-            <br>
-        <br>
         <br>
             <div class="container text-center text-md-left"
                  style= "background-color:white; font-size: 15px; height:100px;">
@@ -25,18 +23,18 @@
                     <div class="col-md-2 mx-auto">
                      <h5>About</h5>
                      <ul class="list-unstyled" >
-                            <li><a href="about.html" style=" color :black;">About us</a></li>
-                            <li><a href="bocards.html" style=" color :black;">For Business Owners</a></li>
-                            <li><a href="incards.html" style=" color :black;">For Investors</a></li>
+                            <li><a href="{%url 'about' %}" style=" color :black;">About us</a></li>
+                            <li><a href="{%url 'startup'%}" style=" color :black;">For Business Owners</a></li>
+                            <li><a href="{% url 'investor' %}" style=" color :black;">For Investors</a></li>
                      </ul>
                     </div> 
                    
                     <div class="col-md-2 mx-auto">
                       <h5>Explore</h5>
                       <ul class="list-unstyled">
-                        <li><a href="login.html" style=" color :black;">Login</a></li>
-                        <li><a href="faq.html" style=" color :black;">FAQs</a></li>
-                        <li><a href="blog.html" style=" color :black;">Blog</a></li>
+                        <li><a href="{%url 'login' %}" style=" color :black;">Login</a></li>
+                        <li><a href="{%url 'faq' %}" style=" color :black;">FAQs</a></li>
+                        <li><a href="{%url 'blog' %}" style=" color :black;">Blog</a></li>
                       </ul>
                     </div>
                     
@@ -44,16 +42,9 @@
                       <h5>Follow Us</h5>
                       <ul class="list-unstyled">
                       <li>
-                        <a class="fab fa-facebook-f" 
-                           href="https://www.facebook.com/ExMyB/" 
-                           id="fb"></a>
-                        <a class="fab fa-instagram" 
-                         href="https://www.instagram.com/ExMyB/" 
-                         id="insta"></a>
-                        <a class="fab fa-linkedin-in" 
-                         href="https://www.linkedin.com/company/expand-my-business/" 
-                         id="lin">
-                        </a>
+                        <a href="https://www.facebook.com/ExMyB/" id="fb"><img src="https://img.icons8.com/clouds/40/000000/facebook-new.png"></a>
+                        <a href="https://www.instagram.com/ExMyB/" id="insta"><img src="https://img.icons8.com/clouds/40/000000/instagram-new.png"></a>
+                        <a href="https://www.linkedin.com/company/expand-my-business/" id="lin"><img src="https://img.icons8.com/clouds/40/000000/linkedin.png"></a>
                       </li> 
                       </ul>    
                     </div>
@@ -65,8 +56,8 @@
             
                 </div>
     
-            </div>     
+            </div>   
+            <br>  
     </footer>    
     
-    </html>
-    
+</html>
