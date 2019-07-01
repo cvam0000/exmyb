@@ -26,11 +26,10 @@
 }
 
 
-.navbar{
-  background-color:lightgray;
-}
+
+
 #home_1, #home_2, #home_3, #home_4, #home_5, #home_6, #home_21, #home_22, #home_31, #home_32{
-    color: white;
+    
     font-size: 14px;
 }
 #home_1:hover,#home_2:hover,#home_3:hover, #home_4:hover, #home_5:hover, #home_6:hover,
@@ -183,7 +182,7 @@
 
 ------->
 
-    <nav class="navbar navbar-expand-md  navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand">
             <img href="{%url 'home' %}" src="https://www.exmyb.com/img/logo.png" width="200px" >
         </a>
@@ -195,36 +194,41 @@
               <li class="nav-item">
               <a class="nav-link" href="{%url 'index' %}" id="home_1"><b>HOME</b></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="home_2"><b>BUSINESS OWNER</b></a>
-                  <ul class="dropdown-menu bo-content" style="margin-left: 147px;
-                  border: transparent;
-                  border-top: 5px solid #8ac832;
-                  border-radius: 0px;">
-                    <li>
-                      <a class="nav-link dropdown-item" href="{% url 'investor' %}" id="home_31"><b>Connect with Investor</b></a> 
-                      
-                    </li>
-                    <li>
-                        <a class="nav-link dropdown-item" href="{%url 'startup'%}" id="home_32"><b>Connect with Fellow Business Owner</b></a>
-                    </li>
-                  </ul>
-              </li>    
-            <li class="nav-item">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="home_3"><b>INVESTOR</b></a>
-                <ul class="dropdown-menu in-content" style="margin-left: 285px;
-                border: transparent;
-                border-top: 5px solid #8ac832;
+
+
+
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="color:black;    font-size: 14px;
+
+
+
                 border-radius:0px;">
-                  <li>
-                    <a class="nav-link dropdown-item" href="{% url 'investor' %}" id="home_31"><b>Connect with Business Owner</b></a> 
+                <b>BUSINESS OWNER</b>  
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{% url 'investor' %}">Connect with Investor</a>
+                  <a class="dropdown-item" href="{%url 'startup'%}">Connect with Fellow Business Owner</a>
+                  
+                </div>
+              </li>
+
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" style="color:black;
+                      font-size: 14px;
+
+                  border-radius:0px;">
+                  <b>INVESTOR</b>  
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{%url 'startup'%}">Connect with Fellow Business Owner</a>
+                    <a class="dropdown-item" href="{% url 'investor' %}">Connect with Investor</a>
+                   
                     
-                  </li>
-                  <li>
-                      <a class="nav-link dropdown-item" href="{%url 'startup'%}" id="home_32"><b>Connect with Fellow Investor</b></a>
-                  </li>
-                </ul>
-            </li> 
+                  </div>
+                </li>
+          
+           
             <li class="nav-item">
                 <a class="nav-link" href="{%url 'about' %}" id="home_4"><b>ABOUT</b></a>
               </li> 
@@ -235,9 +239,23 @@
               <a class="nav-link" href="{%url 'faq' %}" id="home_6"><b>FAQ</b></a>
             </li> 
 
-            <li class="nav-item">
-                <a class="nav-link" href="{%url 'services' %}" id="home_6"><b>SERVICES</b></a>
-              </li> 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="color:black;
+                    font-size: 14px;
+
+                border-radius:0px;">
+                 <b>SERVICES</b> 
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">BAT</a>
+                  <a class="dropdown-item" href="#">Business Registration</a>
+                  <a class="dropdown-item" href="#">BAT  Pitch Deck</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Pitch Deck</a>
+                </div>
+              </li>
+            
+          
 
               <li class="nav-item">
                 <a class="nav-link" href="{%url 'tc' %}" id="home_6"><b>TERMS & CONDITIONS </b></a>
@@ -254,7 +272,7 @@
                     <img width="60"src="https://technovechno.com/wp-content/uploads/2018/05/authoravatar.png"></b></a>
                
                 </a>
-                  <div  class="dropdown-menu" style="margin-left: 85%;
+                  <div  class="dropdown-menu dropdown-menu-right" style="
                   border: transparent;
                   border-top: 5px solid #8ac832;
                   border-radius: 0px;">
